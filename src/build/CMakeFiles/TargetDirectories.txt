@@ -1,0 +1,6 @@
+/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/pclvs.dir
+/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/filter.dir
+/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/normalvector_estimate.dir
+/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/segementation.dir
+/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/edit_cache.dir
+/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/rebuild_cache.dir

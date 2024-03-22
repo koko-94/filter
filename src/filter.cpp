@@ -1,8 +1,14 @@
-/** author: SHR
- ** date: 2024.3.19
- ** name: filter
- ** function: some filter for pcl
- **/
+/**************************************************************************
+
+Author: SHR
+
+Date:2024.3.19
+
+FileName: filter.cpp
+
+Function:some filter for pcl：体素滤波，直通滤波，离群值滤波（距离/搜索半径/搜索点数量）
+
+**************************************************************************/
 
 #include <iostream>                  //基本输入输出库
 #include <pcl/point_types.h>         //点云类型库
@@ -13,6 +19,8 @@
 #include <pcl/visualization/pcl_visualizer.h>        //可视化库
 #include <pcl/filters/statistical_outlier_removal.h> //离群值滤波库
 #include <pcl/filters/radius_outlier_removal.h>      //离群值滤波器
+#include <pcl/ModelCoefficients.h>                   //模型库
+#include <pcl/filters/project_inliers.h>             //
 
 using namespace std;
 using namespace pcl;
@@ -84,7 +92,7 @@ int main()
     // SOR应用离群值滤波器
     // SORfilter(50, 1.0f, cloud, cloud_SORfiltered);
     // ROR
-    RORfilter(3, 0.005f, cloud, cloud_RORfiltered);
+    // RORfilter(3, 0.005f, cloud, cloud_RORfiltered);
 
     return 0;
 }

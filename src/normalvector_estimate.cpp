@@ -1,3 +1,15 @@
+/**************************************************************************
+
+Author: SHR
+
+Date:2024.3.20
+
+FileName: estimate.cpp
+
+Function:法向量估计
+
+**************************************************************************/
+
 #include <iostream>
 
 #include <pcl/visualization/pcl_visualizer.h> //可视化库

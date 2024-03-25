@@ -31,3 +31,11 @@ TARGET_LINK_LIBRARIES( normalvector_estimate ${OpenCV_LIBS}
 ADD_EXECUTABLE( segementation segementation.cpp )
 TARGET_LINK_LIBRARIES( segementation ${OpenCV_LIBS} 
     ${PCL_LIBRARIES} )  
+
+ADD_EXECUTABLE( myproject myproject.cpp )
+TARGET_LINK_LIBRARIES( myproject ${OpenCV_LIBS} 
+    ${PCL_LIBRARIES} )  
+
+ADD_EXECUTABLE( correspondence correspondence.cpp )
+TARGET_LINK_LIBRARIES( correspondence ${OpenCV_LIBS} 
+    ${PCL_LIBRARIES} )  

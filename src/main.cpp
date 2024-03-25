@@ -1,3 +1,15 @@
+/**************************************************************************
+
+Author: SHR
+
+Date:2024.3.16
+
+FileName: main.cpp
+
+Function:main
+
+**************************************************************************/
+
 #include <iostream>
 #include <string>
 #include <boost/thread/thread.hpp>
@@ -48,16 +60,6 @@ int main(int argc, char **argv)
     // 开始显示2种方法,任选其一
     // 1. 阻塞式
     viewer.spin();
-
-    // 2. 非阻塞式
-    // while (!viewer.wasStopped())
-    // {
-    // 	viewer.spinOnce(100);
-    // 	boost::this_thread::sleep(boost::posix_time::microseconds(100000));
-    // 	// 可添加其他操作
-    // }
-
-    // getchar();
     return 0;
 
     // 创建点云指针

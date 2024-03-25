@@ -168,6 +168,56 @@ segementation/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/segementation.dir/build.make CMakeFiles/segementation.dir/build
 .PHONY : segementation/fast
 
+#=============================================================================
+# Target rules for targets named myproject
+
+# Build rule for target.
+myproject: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 myproject
+.PHONY : myproject
+
+# fast build rule for target.
+myproject/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myproject.dir/build.make CMakeFiles/myproject.dir/build
+.PHONY : myproject/fast
+
+#=============================================================================
+# Target rules for targets named correspondence
+
+# Build rule for target.
+correspondence: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 correspondence
+.PHONY : correspondence
+
+# fast build rule for target.
+correspondence/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/correspondence.dir/build.make CMakeFiles/correspondence.dir/build
+.PHONY : correspondence/fast
+
+correspondence.o: correspondence.cpp.o
+.PHONY : correspondence.o
+
+# target to build an object file
+correspondence.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/correspondence.dir/build.make CMakeFiles/correspondence.dir/correspondence.cpp.o
+.PHONY : correspondence.cpp.o
+
+correspondence.i: correspondence.cpp.i
+.PHONY : correspondence.i
+
+# target to preprocess a source file
+correspondence.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/correspondence.dir/build.make CMakeFiles/correspondence.dir/correspondence.cpp.i
+.PHONY : correspondence.cpp.i
+
+correspondence.s: correspondence.cpp.s
+.PHONY : correspondence.s
+
+# target to generate assembly for a file
+correspondence.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/correspondence.dir/build.make CMakeFiles/correspondence.dir/correspondence.cpp.s
+.PHONY : correspondence.cpp.s
+
 filter.o: filter.cpp.o
 .PHONY : filter.o
 
@@ -215,6 +265,30 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pclvs.dir/build.make CMakeFiles/pclvs.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+myproject.o: myproject.cpp.o
+.PHONY : myproject.o
+
+# target to build an object file
+myproject.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myproject.dir/build.make CMakeFiles/myproject.dir/myproject.cpp.o
+.PHONY : myproject.cpp.o
+
+myproject.i: myproject.cpp.i
+.PHONY : myproject.i
+
+# target to preprocess a source file
+myproject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myproject.dir/build.make CMakeFiles/myproject.dir/myproject.cpp.i
+.PHONY : myproject.cpp.i
+
+myproject.s: myproject.cpp.s
+.PHONY : myproject.s
+
+# target to generate assembly for a file
+myproject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/myproject.dir/build.make CMakeFiles/myproject.dir/myproject.cpp.s
+.PHONY : myproject.cpp.s
 
 normalvector_estimate.o: normalvector_estimate.cpp.o
 .PHONY : normalvector_estimate.o
@@ -272,16 +346,24 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... correspondence"
 	@echo "... filter"
+	@echo "... myproject"
 	@echo "... normalvector_estimate"
 	@echo "... pclvs"
 	@echo "... segementation"
+	@echo "... correspondence.o"
+	@echo "... correspondence.i"
+	@echo "... correspondence.s"
 	@echo "... filter.o"
 	@echo "... filter.i"
 	@echo "... filter.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... myproject.o"
+	@echo "... myproject.i"
+	@echo "... myproject.s"
 	@echo "... normalvector_estimate.o"
 	@echo "... normalvector_estimate.i"
 	@echo "... normalvector_estimate.s"

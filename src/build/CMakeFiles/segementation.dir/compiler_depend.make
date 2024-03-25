@@ -1569,9 +1569,511 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
   /usr/include/vtk-9.1/vtkUnstructuredGridBase.h \
   /usr/include/pcl-1.12/pcl/filters/project_inliers.h \
   /usr/include/pcl-1.12/pcl/filters/filter.h \
+  /usr/include/pcl-1.12/pcl/filters/extract_indices.h \
+  /usr/include/pcl-1.12/pcl/filters/filter_indices.h \
+  /usr/include/pcl-1.12/pcl/filters/voxel_grid.h \
+  /usr/include/c++/11/cfloat \
+  /usr/include/pcl-1.12/pcl/features/normal_3d.h \
+  /usr/include/pcl-1.12/pcl/features/feature.h \
+  /usr/include/pcl-1.12/pcl/features/impl/feature.hpp \
+  /usr/include/pcl-1.12/pcl/search/kdtree.h \
+  /usr/include/pcl-1.12/pcl/kdtree/kdtree_flann.h \
+  /usr/include/pcl-1.12/pcl/kdtree/kdtree.h \
+  /usr/include/pcl-1.12/pcl/point_representation.h \
+  /usr/include/flann/util/params.h \
+  /usr/include/flann/util/any.h \
+  /usr/include/flann/general.h \
+  /usr/include/flann/defines.h \
+  /usr/include/flann/config.h \
+  /usr/include/pcl-1.12/pcl/search/organized.h \
+  /usr/include/pcl-1.12/pcl/common/eigen.h \
+  /usr/local/include/eigen3/Eigen/LU \
+  /usr/include/pcl-1.12/pcl/common/impl/eigen.hpp \
+  /usr/include/pcl-1.12/pcl/common/centroid.h \
+  /usr/include/pcl-1.12/pcl/cloud_iterator.h \
+  /usr/include/pcl-1.12/pcl/impl/cloud_iterator.hpp \
+  /usr/include/pcl-1.12/pcl/common/impl/accumulators.hpp \
+  /usr/include/boost/mpl/filter_view.hpp \
+  /usr/include/boost/mpl/aux_/filter_iter.hpp \
+  /usr/include/boost/fusion/include/mpl.hpp \
+  /usr/include/boost/fusion/support/config.hpp \
+  /usr/include/boost/fusion/adapted/mpl.hpp \
+  /usr/include/boost/fusion/adapted/mpl/detail/begin_impl.hpp \
+  /usr/include/boost/fusion/adapted/mpl/mpl_iterator.hpp \
+  /usr/include/boost/fusion/support/detail/mpl_iterator_category.hpp \
+  /usr/include/boost/fusion/iterator/iterator_facade.hpp \
+  /usr/include/boost/fusion/support/iterator_base.hpp \
+  /usr/include/boost/fusion/iterator/detail/advance.hpp \
+  /usr/include/boost/fusion/iterator/next.hpp \
+  /usr/include/boost/fusion/support/tag_of.hpp \
+  /usr/include/boost/fusion/support/tag_of_fwd.hpp \
+  /usr/include/boost/fusion/support/detail/is_mpl_sequence.hpp \
+  /usr/include/boost/fusion/support/detail/is_native_fusion_sequence.hpp \
+  /usr/include/boost/fusion/support/sequence_base.hpp \
+  /usr/include/boost/config/no_tr1/utility.hpp \
+  /usr/include/boost/fusion/iterator/prior.hpp \
+  /usr/include/boost/fusion/iterator/detail/distance.hpp \
+  /usr/include/boost/fusion/iterator/equal_to.hpp \
+  /usr/include/boost/fusion/support/is_iterator.hpp \
+  /usr/include/boost/fusion/support/category_of.hpp \
+  /usr/include/boost/mpl/begin.hpp \
+  /usr/include/boost/fusion/adapted/mpl/detail/end_impl.hpp \
+  /usr/include/boost/mpl/end.hpp \
+  /usr/include/boost/fusion/adapted/mpl/detail/is_sequence_impl.hpp \
+  /usr/include/boost/fusion/adapted/mpl/detail/size_impl.hpp \
+  /usr/include/boost/fusion/adapted/mpl/detail/value_at_impl.hpp \
+  /usr/include/boost/mpl/at.hpp \
+  /usr/include/boost/mpl/aux_/at_impl.hpp \
+  /usr/include/boost/fusion/adapted/mpl/detail/at_impl.hpp \
+  /usr/include/boost/fusion/adapted/mpl/detail/has_key_impl.hpp \
+  /usr/include/boost/mpl/has_key.hpp \
+  /usr/include/boost/mpl/has_key_fwd.hpp \
+  /usr/include/boost/mpl/aux_/has_key_impl.hpp \
+  /usr/include/boost/fusion/adapted/mpl/detail/category_of_impl.hpp \
+  /usr/include/boost/fusion/adapted/mpl/detail/is_view_impl.hpp \
+  /usr/include/boost/fusion/adapted/mpl/detail/empty_impl.hpp \
+  /usr/include/boost/fusion/mpl.hpp \
+  /usr/include/boost/fusion/iterator/mpl.hpp \
+  /usr/include/boost/fusion/iterator/mpl/convert_iterator.hpp \
+  /usr/include/boost/fusion/iterator/mpl/fusion_iterator.hpp \
+  /usr/include/boost/fusion/iterator/value_of.hpp \
+  /usr/include/boost/fusion/iterator/advance.hpp \
+  /usr/include/boost/fusion/iterator/distance.hpp \
+  /usr/include/boost/fusion/mpl/at.hpp \
+  /usr/include/boost/fusion/sequence/intrinsic/value_at.hpp \
+  /usr/include/boost/mpl/empty_base.hpp \
+  /usr/include/boost/fusion/sequence/intrinsic_fwd.hpp \
+  /usr/include/boost/fusion/support/is_sequence.hpp \
+  /usr/include/boost/fusion/mpl/back.hpp \
+  /usr/include/boost/mpl/back.hpp \
+  /usr/include/boost/mpl/aux_/back_impl.hpp \
+  /usr/include/boost/fusion/sequence/intrinsic/end.hpp \
+  /usr/include/boost/fusion/support/is_segmented.hpp \
+  /usr/include/boost/fusion/sequence/intrinsic/detail/segmented_end.hpp \
+  /usr/include/boost/fusion/sequence/intrinsic/detail/segmented_end_impl.hpp \
+  /usr/include/boost/fusion/container/list/cons_fwd.hpp \
+  /usr/include/boost/fusion/iterator/segmented_iterator.hpp \
+  /usr/include/boost/fusion/iterator/detail/segmented_iterator.hpp \
+  /usr/include/boost/fusion/iterator/deref.hpp \
+  /usr/include/boost/fusion/iterator/deref_data.hpp \
+  /usr/include/boost/fusion/iterator/key_of.hpp \
+  /usr/include/boost/fusion/iterator/value_of_data.hpp \
+  /usr/include/boost/fusion/iterator/detail/segmented_equal_to.hpp \
+  /usr/include/boost/fusion/iterator/detail/segmented_next_impl.hpp \
+  /usr/include/boost/fusion/sequence/intrinsic/begin.hpp \
+  /usr/include/boost/fusion/sequence/intrinsic/detail/segmented_begin.hpp \
+  /usr/include/boost/fusion/sequence/intrinsic/detail/segmented_begin_impl.hpp \
+  /usr/include/boost/fusion/support/detail/segmented_fold_until_impl.hpp \
+  /usr/include/boost/fusion/support/void.hpp \
+  /usr/include/boost/fusion/sequence/intrinsic/segments.hpp \
+  /usr/include/boost/fusion/view/iterator_range.hpp \
+  /usr/include/boost/fusion/view/iterator_range/iterator_range.hpp \
+  /usr/include/boost/fusion/support/detail/access.hpp \
+  /usr/include/boost/fusion/view/iterator_range/detail/begin_impl.hpp \
+  /usr/include/boost/fusion/view/iterator_range/detail/end_impl.hpp \
+  /usr/include/boost/fusion/view/iterator_range/detail/at_impl.hpp \
+  /usr/include/boost/fusion/view/iterator_range/detail/size_impl.hpp \
+  /usr/include/boost/fusion/view/iterator_range/detail/value_at_impl.hpp \
+  /usr/include/boost/fusion/view/iterator_range/detail/is_segmented_impl.hpp \
+  /usr/include/boost/fusion/view/iterator_range/detail/segments_impl.hpp \
+  /usr/include/boost/fusion/view/iterator_range/detail/segmented_iterator_range.hpp \
+  /usr/include/boost/fusion/algorithm/transformation/push_back.hpp \
+  /usr/include/boost/fusion/support/detail/as_fusion_element.hpp \
+  /usr/include/boost/fusion/view/joint_view/joint_view.hpp \
+  /usr/include/boost/fusion/view/joint_view/joint_view_fwd.hpp \
+  /usr/include/boost/fusion/support/is_view.hpp \
+  /usr/include/boost/fusion/sequence/intrinsic/size.hpp \
+  /usr/include/boost/fusion/sequence/intrinsic/detail/segmented_size.hpp \
+  /usr/include/boost/fusion/mpl/begin.hpp \
+  /usr/include/boost/fusion/mpl/end.hpp \
+  /usr/include/boost/fusion/view/joint_view/joint_view_iterator.hpp \
+  /usr/include/boost/fusion/view/joint_view/detail/deref_impl.hpp \
+  /usr/include/boost/fusion/iterator/detail/adapt_deref_traits.hpp \
+  /usr/include/boost/fusion/view/joint_view/detail/next_impl.hpp \
+  /usr/include/boost/fusion/view/joint_view/detail/value_of_impl.hpp \
+  /usr/include/boost/fusion/iterator/detail/adapt_value_traits.hpp \
+  /usr/include/boost/fusion/view/joint_view/detail/deref_data_impl.hpp \
+  /usr/include/boost/fusion/view/joint_view/detail/value_of_data_impl.hpp \
+  /usr/include/boost/fusion/view/joint_view/detail/key_of_impl.hpp \
+  /usr/include/boost/fusion/view/joint_view/detail/begin_impl.hpp \
+  /usr/include/boost/fusion/view/joint_view/detail/end_impl.hpp \
+  /usr/include/boost/mpl/inherit.hpp \
+  /usr/include/boost/mpl/aux_/preprocessed/gcc/inherit.hpp \
+  /usr/include/boost/fusion/view/single_view/single_view.hpp \
+  /usr/include/boost/fusion/view/single_view/single_view_iterator.hpp \
+  /usr/include/boost/fusion/view/single_view/detail/deref_impl.hpp \
+  /usr/include/boost/fusion/view/single_view/detail/next_impl.hpp \
+  /usr/include/boost/fusion/view/single_view/detail/prior_impl.hpp \
+  /usr/include/boost/fusion/view/single_view/detail/advance_impl.hpp \
+  /usr/include/boost/fusion/view/single_view/detail/distance_impl.hpp \
+  /usr/include/boost/fusion/view/single_view/detail/equal_to_impl.hpp \
+  /usr/include/boost/fusion/view/single_view/detail/value_of_impl.hpp \
+  /usr/include/boost/fusion/view/single_view/detail/at_impl.hpp \
+  /usr/include/boost/fusion/view/single_view/detail/begin_impl.hpp \
+  /usr/include/boost/fusion/view/single_view/detail/end_impl.hpp \
+  /usr/include/boost/fusion/view/single_view/detail/size_impl.hpp \
+  /usr/include/boost/fusion/view/single_view/detail/value_at_impl.hpp \
+  /usr/include/boost/fusion/algorithm/transformation/push_front.hpp \
+  /usr/include/boost/fusion/container/list/detail/reverse_cons.hpp \
+  /usr/include/boost/fusion/iterator/detail/segment_sequence.hpp \
+  /usr/include/boost/fusion/sequence/intrinsic/empty.hpp \
+  /usr/include/boost/fusion/container/list/cons.hpp \
+  /usr/include/boost/fusion/support/detail/enabler.hpp \
+  /usr/include/boost/fusion/container/list/nil.hpp \
+  /usr/include/boost/fusion/container/list/cons_iterator.hpp \
+  /usr/include/boost/fusion/container/list/detail/deref_impl.hpp \
+  /usr/include/boost/fusion/container/list/detail/next_impl.hpp \
+  /usr/include/boost/fusion/container/list/detail/value_of_impl.hpp \
+  /usr/include/boost/fusion/container/list/detail/equal_to_impl.hpp \
+  /usr/include/boost/fusion/container/list/list_fwd.hpp \
+  /usr/include/boost/fusion/container/list/detail/begin_impl.hpp \
+  /usr/include/boost/fusion/container/list/detail/end_impl.hpp \
+  /usr/include/boost/fusion/container/list/detail/at_impl.hpp \
+  /usr/include/boost/fusion/container/list/detail/value_at_impl.hpp \
+  /usr/include/boost/fusion/container/list/detail/empty_impl.hpp \
+  /usr/include/boost/fusion/mpl/clear.hpp \
+  /usr/include/boost/fusion/mpl/detail/clear.hpp \
+  /usr/include/boost/fusion/container/vector/vector_fwd.hpp \
+  /usr/include/boost/fusion/container/vector/detail/config.hpp \
+  /usr/include/boost/fusion/container/map/map_fwd.hpp \
+  /usr/include/boost/fusion/container/set/set_fwd.hpp \
+  /usr/include/boost/fusion/container/deque/deque_fwd.hpp \
+  /usr/include/boost/fusion/mpl/empty.hpp \
+  /usr/include/boost/fusion/mpl/erase.hpp \
+  /usr/include/boost/mpl/erase.hpp \
+  /usr/include/boost/mpl/erase_fwd.hpp \
+  /usr/include/boost/mpl/aux_/erase_impl.hpp \
+  /usr/include/boost/fusion/algorithm/transformation/erase.hpp \
+  /usr/include/boost/fusion/sequence/convert.hpp \
+  /usr/include/boost/fusion/mpl/erase_key.hpp \
+  /usr/include/boost/mpl/erase_key.hpp \
+  /usr/include/boost/mpl/erase_key_fwd.hpp \
+  /usr/include/boost/mpl/aux_/erase_key_impl.hpp \
+  /usr/include/boost/fusion/algorithm/transformation/erase_key.hpp \
+  /usr/include/boost/fusion/algorithm/query/find.hpp \
+  /usr/include/boost/fusion/algorithm/query/find_if_fwd.hpp \
+  /usr/include/boost/fusion/algorithm/query/detail/find_if.hpp \
+  /usr/include/boost/fusion/algorithm/query/detail/segmented_find.hpp \
+  /usr/include/boost/fusion/algorithm/query/find_fwd.hpp \
+  /usr/include/boost/fusion/support/segmented_fold_until.hpp \
+  /usr/include/boost/fusion/mpl/front.hpp \
+  /usr/include/boost/fusion/mpl/has_key.hpp \
+  /usr/include/boost/fusion/sequence/intrinsic/has_key.hpp \
+  /usr/include/boost/fusion/mpl/insert.hpp \
+  /usr/include/boost/fusion/algorithm/transformation/insert.hpp \
+  /usr/include/boost/fusion/mpl/insert_range.hpp \
+  /usr/include/boost/fusion/algorithm/transformation/insert_range.hpp \
+  /usr/include/boost/fusion/mpl/pop_back.hpp \
+  /usr/include/boost/mpl/pop_back.hpp \
+  /usr/include/boost/mpl/aux_/pop_back_impl.hpp \
+  /usr/include/boost/fusion/algorithm/transformation/pop_back.hpp \
+  /usr/include/boost/fusion/iterator/iterator_adapter.hpp \
+  /usr/include/boost/fusion/mpl/pop_front.hpp \
+  /usr/include/boost/mpl/pop_front.hpp \
+  /usr/include/boost/mpl/aux_/pop_front_impl.hpp \
+  /usr/include/boost/fusion/algorithm/transformation/pop_front.hpp \
+  /usr/include/boost/fusion/mpl/push_back.hpp \
+  /usr/include/boost/fusion/mpl/push_front.hpp \
+  /usr/include/boost/fusion/mpl/size.hpp \
+  /usr/include/boost/fusion/include/for_each.hpp \
+  /usr/include/boost/fusion/algorithm/iteration/for_each.hpp \
+  /usr/include/boost/fusion/algorithm/iteration/detail/for_each.hpp \
+  /usr/include/boost/fusion/algorithm/iteration/detail/segmented_for_each.hpp \
+  /usr/include/boost/fusion/algorithm/iteration/for_each_fwd.hpp \
+  /usr/include/boost/fusion/include/as_vector.hpp \
+  /usr/include/boost/fusion/container/vector/convert.hpp \
+  /usr/include/boost/fusion/container/vector/detail/as_vector.hpp \
+  /usr/include/boost/fusion/support/detail/index_sequence.hpp \
+  /usr/include/boost/fusion/container/vector/vector.hpp \
+  /usr/include/boost/fusion/support/detail/and.hpp \
+  /usr/include/boost/fusion/container/vector/detail/at_impl.hpp \
+  /usr/include/boost/fusion/container/vector/detail/value_at_impl.hpp \
+  /usr/include/boost/fusion/container/vector/detail/begin_impl.hpp \
+  /usr/include/boost/fusion/container/vector/vector_iterator.hpp \
+  /usr/include/boost/fusion/container/vector/detail/deref_impl.hpp \
+  /usr/include/boost/fusion/container/vector/detail/value_of_impl.hpp \
+  /usr/include/boost/fusion/container/vector/detail/next_impl.hpp \
+  /usr/include/boost/fusion/container/vector/detail/prior_impl.hpp \
+  /usr/include/boost/fusion/container/vector/detail/equal_to_impl.hpp \
+  /usr/include/boost/fusion/container/vector/detail/distance_impl.hpp \
+  /usr/include/boost/fusion/container/vector/detail/advance_impl.hpp \
+  /usr/include/boost/fusion/container/vector/detail/end_impl.hpp \
+  /usr/include/boost/fusion/container/vector/detail/convert_impl.hpp \
+  /usr/include/boost/fusion/include/filter_if.hpp \
+  /usr/include/boost/fusion/algorithm/transformation/filter_if.hpp \
+  /usr/include/boost/fusion/view/filter_view/filter_view.hpp \
+  /usr/include/boost/fusion/view/filter_view/filter_view_iterator.hpp \
+  /usr/include/boost/fusion/view/filter_view/detail/deref_impl.hpp \
+  /usr/include/boost/fusion/view/filter_view/detail/next_impl.hpp \
+  /usr/include/boost/fusion/view/filter_view/detail/value_of_impl.hpp \
+  /usr/include/boost/fusion/view/filter_view/detail/equal_to_impl.hpp \
+  /usr/include/boost/fusion/view/filter_view/detail/deref_data_impl.hpp \
+  /usr/include/boost/fusion/view/filter_view/detail/value_of_data_impl.hpp \
+  /usr/include/boost/fusion/view/filter_view/detail/key_of_impl.hpp \
+  /usr/include/boost/fusion/view/filter_view/detail/begin_impl.hpp \
+  /usr/include/boost/fusion/view/filter_view/detail/end_impl.hpp \
+  /usr/include/boost/fusion/view/filter_view/detail/size_impl.hpp \
+  /usr/include/pcl-1.12/pcl/common/impl/centroid.hpp \
+  /usr/include/pcl-1.12/pcl/segmentation/extract_clusters.h \
   /usr/include/pcl-1.12/pcl/sample_consensus/method_types.h \
   /usr/include/pcl-1.12/pcl/segmentation/sac_segmentation.h
 
+
+/usr/include/boost/fusion/view/filter_view/detail/end_impl.hpp:
+
+/usr/include/boost/fusion/view/filter_view/detail/begin_impl.hpp:
+
+/usr/include/boost/fusion/view/filter_view/detail/key_of_impl.hpp:
+
+/usr/include/boost/fusion/view/filter_view/detail/value_of_data_impl.hpp:
+
+/usr/include/boost/fusion/view/filter_view/detail/equal_to_impl.hpp:
+
+/usr/include/boost/fusion/view/filter_view/detail/next_impl.hpp:
+
+/usr/include/boost/fusion/view/filter_view/detail/deref_impl.hpp:
+
+/usr/include/boost/fusion/container/vector/detail/end_impl.hpp:
+
+/usr/include/boost/fusion/container/vector/detail/advance_impl.hpp:
+
+/usr/include/boost/fusion/container/vector/detail/equal_to_impl.hpp:
+
+/usr/include/boost/fusion/container/vector/detail/next_impl.hpp:
+
+/usr/include/boost/fusion/container/vector/detail/begin_impl.hpp:
+
+/usr/include/boost/fusion/container/vector/vector.hpp:
+
+/usr/include/boost/fusion/container/vector/detail/as_vector.hpp:
+
+/usr/include/boost/fusion/algorithm/iteration/for_each_fwd.hpp:
+
+/usr/include/boost/fusion/algorithm/iteration/detail/segmented_for_each.hpp:
+
+/usr/include/boost/fusion/algorithm/iteration/for_each.hpp:
+
+/usr/include/boost/fusion/include/for_each.hpp:
+
+/usr/include/boost/fusion/mpl/push_front.hpp:
+
+/usr/include/boost/fusion/algorithm/transformation/pop_front.hpp:
+
+/usr/include/boost/mpl/aux_/pop_front_impl.hpp:
+
+/usr/include/boost/mpl/pop_front.hpp:
+
+/usr/include/boost/fusion/mpl/pop_front.hpp:
+
+/usr/include/boost/fusion/iterator/iterator_adapter.hpp:
+
+/usr/include/boost/fusion/algorithm/transformation/pop_back.hpp:
+
+/usr/include/boost/fusion/mpl/has_key.hpp:
+
+/usr/include/boost/fusion/algorithm/transformation/filter_if.hpp:
+
+/usr/include/boost/fusion/algorithm/query/detail/find_if.hpp:
+
+/usr/include/boost/fusion/algorithm/query/find.hpp:
+
+/usr/include/boost/fusion/algorithm/transformation/erase_key.hpp:
+
+/usr/include/boost/mpl/erase_key_fwd.hpp:
+
+/usr/include/boost/mpl/erase_key.hpp:
+
+/usr/include/boost/fusion/mpl/erase_key.hpp:
+
+/usr/include/boost/fusion/sequence/convert.hpp:
+
+/usr/include/boost/mpl/erase_fwd.hpp:
+
+/usr/include/boost/fusion/container/set/set_fwd.hpp:
+
+/usr/include/boost/fusion/view/filter_view/filter_view_iterator.hpp:
+
+/usr/include/boost/fusion/container/vector/vector_fwd.hpp:
+
+/usr/include/boost/fusion/mpl/detail/clear.hpp:
+
+/usr/include/boost/fusion/mpl/clear.hpp:
+
+/usr/include/boost/fusion/container/list/detail/empty_impl.hpp:
+
+/usr/include/boost/fusion/container/list/detail/value_at_impl.hpp:
+
+/usr/include/boost/fusion/container/list/list_fwd.hpp:
+
+/usr/include/boost/fusion/container/list/detail/deref_impl.hpp:
+
+/usr/include/boost/fusion/support/detail/enabler.hpp:
+
+/usr/include/boost/fusion/container/list/cons.hpp:
+
+/usr/include/boost/fusion/container/list/detail/reverse_cons.hpp:
+
+/usr/include/boost/fusion/algorithm/transformation/push_front.hpp:
+
+/usr/include/boost/fusion/view/single_view/detail/end_impl.hpp:
+
+/usr/include/boost/fusion/view/single_view/detail/at_impl.hpp:
+
+/usr/include/boost/fusion/view/single_view/detail/prior_impl.hpp:
+
+/usr/include/boost/fusion/view/single_view/detail/deref_impl.hpp:
+
+/usr/include/boost/fusion/container/list/detail/at_impl.hpp:
+
+/usr/include/boost/fusion/view/single_view/single_view_iterator.hpp:
+
+/usr/include/boost/fusion/view/single_view/single_view.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/inherit.hpp:
+
+/usr/include/boost/mpl/inherit.hpp:
+
+/usr/include/boost/fusion/view/joint_view/detail/end_impl.hpp:
+
+/usr/include/boost/fusion/view/joint_view/detail/begin_impl.hpp:
+
+/usr/include/boost/fusion/view/joint_view/detail/key_of_impl.hpp:
+
+/usr/include/boost/fusion/view/joint_view/detail/value_of_impl.hpp:
+
+/usr/include/boost/fusion/view/joint_view/detail/next_impl.hpp:
+
+/usr/include/boost/fusion/view/joint_view/joint_view_iterator.hpp:
+
+/usr/include/boost/fusion/mpl/end.hpp:
+
+/usr/include/boost/fusion/sequence/intrinsic/size.hpp:
+
+/usr/include/boost/fusion/support/detail/as_fusion_element.hpp:
+
+/usr/include/boost/fusion/view/joint_view/detail/deref_data_impl.hpp:
+
+/usr/include/boost/fusion/view/iterator_range/detail/segments_impl.hpp:
+
+/usr/include/boost/fusion/view/iterator_range/detail/is_segmented_impl.hpp:
+
+/usr/include/boost/fusion/view/iterator_range/detail/value_at_impl.hpp:
+
+/usr/include/boost/fusion/view/iterator_range/detail/at_impl.hpp:
+
+/usr/include/boost/fusion/view/iterator_range/detail/end_impl.hpp:
+
+/usr/include/boost/fusion/view/iterator_range/iterator_range.hpp:
+
+/usr/include/boost/fusion/support/detail/segmented_fold_until_impl.hpp:
+
+/usr/include/boost/fusion/sequence/intrinsic/detail/segmented_begin_impl.hpp:
+
+/usr/include/boost/fusion/sequence/intrinsic/detail/segmented_begin.hpp:
+
+/usr/include/boost/fusion/iterator/detail/segmented_next_impl.hpp:
+
+/usr/include/boost/fusion/iterator/detail/segmented_equal_to.hpp:
+
+/usr/include/boost/fusion/iterator/key_of.hpp:
+
+/usr/include/boost/fusion/iterator/deref_data.hpp:
+
+/usr/include/boost/fusion/iterator/segmented_iterator.hpp:
+
+/usr/include/boost/fusion/sequence/intrinsic/detail/segmented_end.hpp:
+
+/usr/include/boost/fusion/support/is_segmented.hpp:
+
+/usr/include/boost/fusion/sequence/intrinsic/end.hpp:
+
+/usr/include/boost/fusion/mpl/back.hpp:
+
+/usr/include/boost/fusion/support/is_sequence.hpp:
+
+/usr/include/boost/mpl/empty_base.hpp:
+
+/usr/include/boost/fusion/sequence/intrinsic/value_at.hpp:
+
+/usr/include/boost/fusion/mpl/at.hpp:
+
+/usr/include/boost/fusion/iterator/value_of.hpp:
+
+/usr/include/boost/fusion/iterator/mpl/fusion_iterator.hpp:
+
+/usr/include/boost/fusion/support/segmented_fold_until.hpp:
+
+/usr/include/boost/fusion/iterator/mpl/convert_iterator.hpp:
+
+/usr/include/boost/fusion/iterator/mpl.hpp:
+
+/usr/include/boost/fusion/mpl.hpp:
+
+/usr/include/boost/mpl/has_key_fwd.hpp:
+
+/usr/include/boost/fusion/adapted/mpl/detail/has_key_impl.hpp:
+
+/usr/include/boost/fusion/adapted/mpl/detail/at_impl.hpp:
+
+/usr/include/boost/fusion/adapted/mpl/detail/value_at_impl.hpp:
+
+/usr/include/boost/fusion/adapted/mpl/detail/size_impl.hpp:
+
+/usr/include/pcl-1.12/pcl/common/impl/centroid.hpp:
+
+/usr/include/boost/mpl/end.hpp:
+
+/usr/include/boost/fusion/support/category_of.hpp:
+
+/usr/include/boost/fusion/iterator/equal_to.hpp:
+
+/usr/include/boost/fusion/iterator/detail/distance.hpp:
+
+/usr/include/boost/fusion/iterator/prior.hpp:
+
+/usr/include/boost/fusion/support/detail/is_native_fusion_sequence.hpp:
+
+/usr/include/boost/fusion/support/detail/is_mpl_sequence.hpp:
+
+/usr/include/boost/fusion/support/tag_of_fwd.hpp:
+
+/usr/include/boost/fusion/view/single_view/detail/distance_impl.hpp:
+
+/usr/include/boost/fusion/support/tag_of.hpp:
+
+/usr/include/boost/fusion/iterator/detail/advance.hpp:
+
+/usr/include/boost/fusion/support/iterator_base.hpp:
+
+/usr/include/boost/fusion/support/detail/mpl_iterator_category.hpp:
+
+/usr/include/boost/fusion/support/config.hpp:
+
+/usr/include/pcl-1.12/pcl/impl/cloud_iterator.hpp:
+
+/usr/include/boost/fusion/algorithm/query/detail/segmented_find.hpp:
+
+/usr/include/pcl-1.12/pcl/cloud_iterator.h:
+
+/usr/include/pcl-1.12/pcl/common/eigen.h:
+
+/usr/include/flann/defines.h:
+
+/usr/include/flann/general.h:
+
+/usr/include/flann/util/any.h:
+
+/usr/include/pcl-1.12/pcl/point_representation.h:
+
+/usr/include/pcl-1.12/pcl/kdtree/kdtree.h:
+
+/usr/include/pcl-1.12/pcl/features/feature.h:
+
+/usr/include/pcl-1.12/pcl/features/normal_3d.h:
+
+/usr/include/boost/fusion/algorithm/transformation/erase.hpp:
+
+/usr/include/pcl-1.12/pcl/filters/voxel_grid.h:
 
 /usr/include/vtk-9.1/vtkUnstructuredGridBase.h:
 
@@ -1594,6 +2096,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/vtk-9.1/vtkGeometryFilter.h:
 
 /usr/include/vtk-9.1/vtkFiltersGeometryModule.h:
+
+/usr/include/boost/mpl/at.hpp:
 
 /usr/include/vtk-9.1/vtkProperty2D.h:
 
@@ -1643,7 +2147,13 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/vtk-9.1/vtkDataArrayTupleRange_Generic.h:
 
+/usr/include/boost/fusion/container/vector/detail/at_impl.hpp:
+
+/usr/include/pcl-1.12/pcl/common/centroid.h:
+
 /usr/include/vtk-9.1/vtkDataArrayTupleRange_AOS.h:
+
+/usr/include/boost/fusion/iterator/value_of_data.hpp:
 
 /usr/include/vtk-9.1/vtkDebugRangeIterators.h:
 
@@ -1658,6 +2168,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/vtk-9.1/vtkRenderWindowInteractor.h:
 
 /usr/include/vtk-9.1/vtkOrientationMarkerWidget.h:
+
+/usr/include/boost/fusion/container/list/detail/end_impl.hpp:
 
 /usr/include/vtk-9.1/vtkRenderWindow.h:
 
@@ -1675,6 +2187,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/vtk-9.1/vtkInteractorStyle.h:
 
+/usr/include/boost/fusion/view/iterator_range/detail/segmented_iterator_range.hpp:
+
 /usr/include/vtk-9.1/vtkInteractorStyleTrackballCamera.h:
 
 /usr/include/vtk-9.1/vtkInteractionStyleModule.h:
@@ -1684,6 +2198,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/signals2/detail/lwm_pthreads.hpp:
 
 /usr/include/boost/signals2/mutex.hpp:
+
+/usr/include/boost/fusion/container/vector/detail/deref_impl.hpp:
 
 /usr/include/boost/signals2/optional_last_value.hpp:
 
@@ -1698,6 +2214,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/optional/detail/optional_reference_spec.hpp:
 
 /usr/include/boost/optional/detail/optional_config.hpp:
+
+/usr/include/boost/fusion/view/iterator_range/detail/size_impl.hpp:
 
 /usr/include/boost/type_traits/type_identity.hpp:
 
@@ -1771,6 +2289,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/mpl/list/aux_/O1_size.hpp:
 
+/usr/include/boost/fusion/iterator/iterator_facade.hpp:
+
 /usr/include/boost/mpl/list/aux_/clear.hpp:
 
 /usr/include/boost/mpl/list/aux_/pop_front.hpp:
@@ -1793,6 +2313,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/variant/recursive_wrapper_fwd.hpp:
 
+/usr/include/boost/fusion/view/joint_view/detail/value_of_data_impl.hpp:
+
 /usr/include/boost/call_traits.hpp:
 
 /usr/include/boost/variant/detail/config.hpp:
@@ -1808,6 +2330,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/mpl/aux_/preprocessed/gcc/advance_forward.hpp:
 
 /usr/include/boost/mpl/aux_/advance_forward.hpp:
+
+/usr/include/pcl-1.12/pcl/filters/extract_indices.h:
 
 /usr/include/boost/mpl/negate.hpp:
 
@@ -1832,6 +2356,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/signals2/detail/foreign_ptr.hpp:
 
 /usr/include/boost/smart_ptr/weak_ptr.hpp:
+
+/usr/include/boost/fusion/iterator/detail/adapt_value_traits.hpp:
 
 /usr/include/boost/signals2/detail/tracked_objects_visitor.hpp:
 
@@ -1865,6 +2391,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/signals2/detail/auto_buffer.hpp:
 
+/usr/include/boost/fusion/iterator/next.hpp:
+
 /usr/include/boost/signals2/connection.hpp:
 
 /usr/include/boost/core/no_exceptions_support.hpp:
@@ -1879,6 +2407,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/preprocessor/iteration/detail/iter/forward1.hpp:
 
+/usr/include/boost/mpl/erase.hpp:
+
 /usr/include/boost/preprocessor/enum_params.hpp:
 
 /usr/include/boost/preprocessor/repetition/enum.hpp:
@@ -1890,6 +2420,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/get_pointer.hpp:
 
 /usr/include/boost/bind/mem_fn.hpp:
+
+/usr/include/boost/fusion/include/filter_if.hpp:
 
 /usr/include/boost/signals2/trackable.hpp:
 
@@ -1924,6 +2456,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/function/detail/prologue.hpp:
 
 /usr/include/boost/preprocessor/slot/detail/def.hpp:
+
+/usr/include/pcl-1.12/pcl/search/kdtree.h:
 
 /usr/include/boost/preprocessor/slot/slot.hpp:
 
@@ -1965,6 +2499,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/vtk-9.1/vtkLODActor.h:
 
+/usr/include/pcl-1.12/pcl/common/impl/eigen.hpp:
+
 /usr/include/boost/variant/detail/initializer.hpp:
 
 /usr/include/pcl-1.12/pcl/common/point_tests.h:
@@ -1993,6 +2529,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h:
 
+/usr/include/boost/fusion/algorithm/transformation/push_back.hpp:
+
 /usr/include/vtk-9.1/vtkMathConfigure.h:
 
 /usr/include/vtk-9.1/vtkMatrixUtilities.h:
@@ -2009,6 +2547,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/vtk-9.1/vtkDebugLeaksManager.h:
 
+/usr/include/boost/mpl/has_key.hpp:
+
 /usr/include/vtk-9.1/vtkObjectFactory.h:
 
 /usr/include/vtk-9.1/vtkBuffer.h:
@@ -2018,6 +2558,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/vtk-9.1/vtkVariantInlineOperators.h:
 
 /usr/include/vtk-9.1/vtkStdString.h:
+
+/usr/include/boost/mpl/begin.hpp:
 
 /usr/include/vtk-9.1/vtkDeprecation.h:
 
@@ -2081,6 +2623,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/pcl-1.12/pcl/TextureMesh.h:
 
+/usr/include/boost/fusion/algorithm/iteration/detail/for_each.hpp:
+
 /usr/include/boost/container_hash/hash_fwd.hpp:
 
 /usr/include/pcl-1.12/pcl/ModelCoefficients.h:
@@ -2111,6 +2655,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/integer/integer_log2.hpp:
 
+/usr/include/boost/fusion/adapted/mpl/detail/end_impl.hpp:
+
 /usr/include/boost/random/detail/integer_log2.hpp:
 
 /usr/include/boost/random/detail/const_mod.hpp:
@@ -2128,6 +2674,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/random/detail/ptr_helper.hpp:
 
 /usr/include/boost/integer_traits.hpp:
+
+/usr/include/boost/fusion/container/vector/convert.hpp:
 
 /usr/include/boost/integer.hpp:
 
@@ -2189,6 +2737,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/config/detail/select_platform_config.hpp:
 
+/usr/include/boost/fusion/container/list/detail/equal_to_impl.hpp:
+
 /usr/include/linux/close_range.h:
 
 /usr/include/c++/11/bits/stl_numeric.h:
@@ -2245,6 +2795,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/local/include/eigen3/Eigen/src/Core/AssignEvaluator.h:
 
+/usr/include/pcl-1.12/pcl/kdtree/kdtree_flann.h:
+
 /usr/include/boost/iterator/distance.hpp:
 
 /usr/local/include/eigen3/Eigen/src/Geometry/Quaternion.h:
@@ -2273,7 +2825,11 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/local/include/eigen3/Eigen/src/misc/Image.h:
 
+/usr/include/boost/fusion/support/detail/access.hpp:
+
 /usr/local/include/eigen3/Eigen/LU:
+
+/usr/include/pcl-1.12/pcl/search/organized.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
 
@@ -2297,7 +2853,11 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/range/value_type.hpp:
 
+/usr/include/boost/fusion/container/vector/vector_iterator.hpp:
+
 /usr/local/include/eigen3/Eigen/src/Jacobi/Jacobi.h:
+
+/usr/include/boost/fusion/view/filter_view/filter_view.hpp:
 
 /usr/local/include/eigen3/Eigen/src/Householder/Householder.h:
 
@@ -2314,6 +2874,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/local/include/eigen3/Eigen/src/StlSupport/details.h:
 
 /usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp:
+
+/usr/include/boost/fusion/container/vector/detail/value_of_impl.hpp:
 
 /usr/local/include/eigen3/Eigen/src/Core/Replicate.h:
 
@@ -2347,6 +2909,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/local/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h:
 
+/usr/include/boost/fusion/mpl/begin.hpp:
+
 /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
 
 /usr/include/pcl-1.12/pcl/PCLHeader.h:
@@ -2369,7 +2933,11 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/numeric/conversion/int_float_mixture_enum.hpp:
 
+/usr/include/boost/fusion/container/list/detail/value_of_impl.hpp:
+
 /usr/local/include/eigen3/Eigen/src/Core/Inverse.h:
+
+/usr/include/boost/fusion/algorithm/transformation/insert.hpp:
 
 /usr/local/include/eigen3/Eigen/src/LU/FullPivLU.h:
 
@@ -2384,6 +2952,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/preprocessor/tuple/eat.hpp:
 
 /usr/local/include/eigen3/Eigen/src/Core/GeneralProduct.h:
+
+/usr/include/boost/fusion/adapted/mpl/detail/is_view_impl.hpp:
 
 /usr/local/include/eigen3/Eigen/src/Core/CommaInitializer.h:
 
@@ -2416,6 +2986,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/mpl/at_fwd.hpp:
 
 /usr/include/boost/mpl/has_xxx.hpp:
+
+/usr/include/boost/fusion/mpl/pop_back.hpp:
 
 /usr/local/include/eigen3/Eigen/src/Core/DiagonalProduct.h:
 
@@ -2452,6 +3024,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/local/include/eigen3/Eigen/src/Core/Stride.h:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/boost/fusion/sequence/intrinsic/detail/segmented_size.hpp:
 
 /usr/local/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h:
 
@@ -2494,6 +3068,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/local/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h:
 
 /usr/include/boost/interprocess/streams/bufferstream.hpp:
+
+/usr/include/boost/fusion/adapted/mpl/detail/begin_impl.hpp:
 
 /usr/local/include/eigen3/Eigen/src/Core/DenseBase.h:
 
@@ -2544,6 +3120,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/smart_ptr/detail/sp_thread_pause.hpp:
 
 /usr/local/include/eigen3/Eigen/src/Core/util/Constants.h:
+
+/usr/include/boost/fusion/view/single_view/detail/value_of_impl.hpp:
 
 /usr/include/c++/11/algorithm:
 
@@ -2615,6 +3193,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/local/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h:
 
+/usr/include/boost/fusion/container/list/detail/next_impl.hpp:
+
 /usr/local/include/eigen3/Eigen/StdVector:
 
 /usr/include/boost/throw_exception.hpp:
@@ -2665,6 +3245,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/c++/11/bits/charconv.h:
 
+/usr/include/boost/fusion/iterator/distance.hpp:
+
 /usr/include/math.h:
 
 /usr/include/c++/11/bits/locale_classes.h:
@@ -2687,7 +3269,11 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
+/usr/include/boost/fusion/adapted/mpl/detail/category_of_impl.hpp:
+
 /usr/include/c++/11/ext/new_allocator.h:
+
+/usr/include/boost/mpl/pop_back.hpp:
 
 /usr/include/c++/11/bits/specfun.h:
 
@@ -2705,9 +3291,13 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/c++/11/bits/stl_pair.h:
 
+/usr/include/boost/config/no_tr1/utility.hpp:
+
 /usr/include/assert.h:
 
 /usr/include/boost/mpl/aux_/config/has_xxx.hpp:
+
+/usr/include/c++/11/cfloat:
 
 /usr/local/include/eigen3/Eigen/src/Core/util/MKL_support.h:
 
@@ -2793,9 +3383,13 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
+/usr/include/boost/fusion/sequence/intrinsic/detail/segmented_end_impl.hpp:
+
 /usr/include/boost/numeric/conversion/detail/udt_builtin_mixture.hpp:
 
 /usr/include/boost/interprocess/detail/std_fwd.hpp:
+
+/usr/include/boost/mpl/aux_/back_impl.hpp:
 
 /usr/include/c++/11/bits/predefined_ops.h:
 
@@ -2816,6 +3410,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/mpl/aux_/value_wknd.hpp:
 
 /usr/include/c++/11/new:
+
+/usr/include/boost/fusion/sequence/intrinsic/begin.hpp:
 
 /usr/include/pcl-1.12/pcl/visualization/common/impl/common.hpp:
 
@@ -2842,6 +3438,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/config/stdlib/libstdcpp3.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
+/usr/include/boost/fusion/mpl/erase.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/struct_stat.h:
 
@@ -2877,6 +3475,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
+/usr/include/boost/fusion/iterator/detail/segmented_iterator.hpp:
+
 /usr/include/c++/11/bits/stl_iterator_base_funcs.h:
 
 /usr/include/boost/mpl/contains_fwd.hpp:
@@ -2894,6 +3494,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/smart_ptr/detail/local_counted_base.hpp:
 
 /usr/include/c++/11/exception:
+
+/usr/include/boost/fusion/support/void.hpp:
 
 /usr/include/boost/preprocessor/facilities/empty.hpp:
 
@@ -2919,6 +3521,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/c++/11/tr1/special_function_util.h:
 
+/usr/include/boost/fusion/support/is_view.hpp:
+
 /usr/include/boost/predef/os/ios.h:
 
 /usr/include/boost/preprocessor/seq/fold_left.hpp:
@@ -2926,6 +3530,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/linux/errno.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
+
+/usr/include/boost/fusion/support/is_iterator.hpp:
 
 /usr/include/vtk-9.1/vtkObject.h:
 
@@ -2993,6 +3599,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h:
 
+/usr/include/boost/mpl/back.hpp:
+
 /usr/include/c++/11/ctime:
 
 /usr/include/c++/11/ext/type_traits.h:
@@ -3016,6 +3624,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/preprocessor/comparison/less.hpp:
 
 /usr/include/boost/mpl/aux_/yes_no.hpp:
+
+/usr/include/boost/fusion/container/map/map_fwd.hpp:
 
 /usr/include/c++/11/bits/alloc_traits.h:
 
@@ -3057,6 +3667,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/c++/11/bits/unique_ptr.h:
 
+/usr/include/boost/fusion/container/vector/detail/convert_impl.hpp:
+
 /usr/local/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
@@ -3073,7 +3685,11 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/predef/os/macos.h:
 
+/usr/include/boost/fusion/container/vector/detail/prior_impl.hpp:
+
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/usr/include/pcl-1.12/pcl/segmentation/extract_clusters.h:
 
 /usr/include/boost/mpl/aux_/arity.hpp:
 
@@ -3082,6 +3698,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/preprocessor/detail/check.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/boost/fusion/sequence/intrinsic/empty.hpp:
 
 /usr/include/stdc-predef.h:
 
@@ -3112,6 +3730,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/unistd.h:
 
 /usr/include/boost/exception/exception.hpp:
+
+/usr/include/boost/fusion/include/mpl.hpp:
 
 /usr/include/boost/preprocessor/tuple/elem.hpp:
 
@@ -3152,6 +3772,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/c++/11/cstdlib:
 
 /usr/local/include/eigen3/Eigen/src/Core/Assign.h:
+
+/usr/include/boost/fusion/view/filter_view/detail/size_impl.hpp:
 
 /usr/include/c++/11/thread:
 
@@ -3257,6 +3879,10 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/mpl/aux_/find_if_pred.hpp:
 
+/usr/include/boost/fusion/view/single_view/detail/begin_impl.hpp:
+
+/usr/include/boost/fusion/adapted/mpl/detail/is_sequence_impl.hpp:
+
 /usr/local/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h:
 
 /usr/include/boost/mpl/aux_/advance_backward.hpp:
@@ -3267,6 +3893,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/mpl/equal_to.hpp:
 
+/usr/include/boost/fusion/mpl/insert.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/alloca.h:
@@ -3274,6 +3902,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/local/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h:
 
 /usr/include/boost/preprocessor/facilities/expand.hpp:
+
+/usr/include/boost/fusion/support/sequence_base.hpp:
 
 /usr/include/boost/preprocessor/seq/enum.hpp:
 
@@ -3288,6 +3918,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/c++/11/chrono:
 
 /usr/include/boost/mpl/protect.hpp:
+
+/usr/include/boost/fusion/view/filter_view/detail/deref_data_impl.hpp:
 
 /usr/include/boost/preprocessor/list/reverse.hpp:
 
@@ -3377,6 +4009,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/c++/11/cstddef:
 
+/usr/include/boost/mpl/aux_/filter_iter.hpp:
+
 /usr/include/c++/11/bits/stl_vector.h:
 
 /usr/include/boost/date_time/time_defs.hpp:
@@ -3416,6 +4050,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/local/include/eigen3/Eigen/src/Core/util/Macros.h:
 
 /usr/include/boost/type_traits/declval.hpp:
+
+/usr/include/boost/fusion/algorithm/transformation/insert_range.hpp:
 
 /usr/include/boost/range/size.hpp:
 
@@ -3475,6 +4111,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/mpl/assert.hpp:
 
+/usr/include/pcl-1.12/pcl/filters/filter_indices.h:
+
 /usr/include/boost/preprocessor/list/fold_right.hpp:
 
 /usr/include/pcl-1.12/pcl/point_cloud.h:
@@ -3482,6 +4120,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/range/iterator.hpp:
 
 /usr/include/c++/11/bits/refwrap.h:
+
+/usr/include/boost/mpl/aux_/pop_back_impl.hpp:
 
 /usr/include/c++/11/ratio:
 
@@ -3543,6 +4183,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/mpl/aux_/nested_type_wknd.hpp:
 
+/usr/include/boost/fusion/container/list/nil.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
 /usr/local/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h:
@@ -3557,7 +4199,11 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/c++/11/tr1/beta_function.tcc:
 
+/usr/include/boost/fusion/container/deque/deque_fwd.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+
+/usr/include/pcl-1.12/pcl/common/impl/accumulators.hpp:
 
 /usr/include/boost/preprocessor/enum_shifted_params.hpp:
 
@@ -3647,6 +4293,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/interprocess/sync/detail/locks.hpp:
 
+/usr/include/boost/fusion/support/detail/index_sequence.hpp:
+
 /usr/include/boost/date_time/gregorian_calendar.ipp:
 
 /usr/include/boost/mpl/vector/vector0.hpp:
@@ -3685,6 +4333,10 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/mpl/aux_/common_name_wknd.hpp:
 
+/usr/include/boost/fusion/container/vector/detail/config.hpp:
+
+/usr/include/boost/fusion/sequence/intrinsic_fwd.hpp:
+
 /usr/include/boost/mpl/vector/aux_/pop_front.hpp:
 
 /usr/include/boost/date_time/adjust_functors.hpp:
@@ -3708,6 +4360,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/mpl/vector/aux_/pop_back.hpp:
 
 /usr/include/boost/mpl/back_fwd.hpp:
+
+/usr/include/boost/fusion/adapted/mpl.hpp:
 
 /usr/local/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:
 
@@ -3735,6 +4389,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/mpl/plus.hpp:
 
+/usr/include/boost/fusion/include/as_vector.hpp:
+
 /usr/include/boost/mpl/aux_/preprocessor/params.hpp:
 
 /usr/include/boost/mpl/aux_/arithmetic_op.hpp:
@@ -3760,6 +4416,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/mpl/aux_/has_apply.hpp:
 
 /usr/include/boost/mpl/aux_/config/msvc_typename.hpp:
+
+/usr/include/boost/fusion/adapted/mpl/mpl_iterator.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/mman-linux.h:
 
@@ -3811,6 +4469,10 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/mpl/aux_/has_tag.hpp:
 
+/usr/include/boost/fusion/support/detail/and.hpp:
+
+/usr/include/boost/fusion/view/single_view/detail/size_impl.hpp:
+
 /usr/local/include/eigen3/Eigen/src/Core/BandMatrix.h:
 
 /usr/local/include/eigen3/Eigen/src/Core/MathFunctions.h:
@@ -3853,9 +4515,13 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/equal_to.hpp:
 
+/usr/include/boost/fusion/algorithm/query/find_if_fwd.hpp:
+
 /usr/include/boost/mpl/vector/aux_/empty.hpp:
 
 /usr/include/boost/concept/detail/backward_compatibility.hpp:
+
+/usr/include/boost/mpl/aux_/erase_key_impl.hpp:
 
 /usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:
 
@@ -3899,6 +4565,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/c++/11/bits/align.h:
 
+/usr/include/boost/mpl/aux_/has_key_impl.hpp:
+
 /usr/include/boost/foreach_fwd.hpp:
 
 /usr/include/boost/type_traits/aligned_storage.hpp:
@@ -3928,6 +4596,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/pcl-1.12/pcl/console/print.h:
 
 /usr/include/pcl-1.12/pcl/pcl_exports.h:
+
+/usr/include/boost/fusion/view/iterator_range/detail/begin_impl.hpp:
 
 /usr/include/c++/11/numeric:
 
@@ -3969,9 +4639,13 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/next_prior.hpp:
 
+/usr/include/boost/fusion/sequence/intrinsic/has_key.hpp:
+
 /usr/include/pcl-1.12/pcl/Vertices.h:
 
 /usr/include/c++/11/bits/locale_facets_nonio.h:
+
+/usr/include/flann/config.h:
 
 /usr/include/vtk-9.1/vtkWrappingHints.h:
 
@@ -3988,6 +4662,10 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/c++/11/bits/locale_facets_nonio.tcc:
 
 /usr/include/boost/date_time/gregorian/gregorian_types.hpp:
+
+/usr/include/boost/fusion/mpl/size.hpp:
+
+/usr/include/flann/util/params.h:
 
 /usr/include/c++/11/bits/locale_conv.h:
 
@@ -4035,11 +4713,17 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/mpl/deref.hpp:
 
+/usr/include/boost/mpl/aux_/erase_impl.hpp:
+
+/usr/include/boost/fusion/iterator/detail/adapt_deref_traits.hpp:
+
 /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/bind.hpp:
 
 /usr/include/boost/mpl/aux_/msvc_type.hpp:
+
+/usr/include/boost/mpl/filter_view.hpp:
 
 /usr/local/include/eigen3/Eigen/src/Core/SolveTriangular.h:
 
@@ -4084,6 +4768,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/range/as_literal.hpp:
 
 /usr/include/boost/mpl/lambda.hpp:
+
+/usr/include/boost/fusion/view/filter_view/detail/value_of_impl.hpp:
 
 /usr/include/boost/mpl/bind.hpp:
 
@@ -4155,6 +4841,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/mpl/aux_/iter_apply.hpp:
 
+/usr/include/boost/fusion/mpl/insert_range.hpp:
+
 /usr/include/c++/11/bits/list.tcc:
 
 /usr/include/vtk-9.1/vtkFloatArray.h:
@@ -4187,11 +4875,17 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/core/addressof.hpp:
 
+/usr/include/boost/fusion/mpl/front.hpp:
+
 /usr/include/boost/noncopyable.hpp:
+
+/usr/include/boost/mpl/aux_/at_impl.hpp:
 
 /usr/local/include/eigen3/Eigen/src/plugins/BlockMethods.h:
 
 /usr/include/boost/core/noncopyable.hpp:
+
+/usr/include/boost/fusion/view/single_view/detail/value_at_impl.hpp:
 
 /usr/include/boost/range/detail/common.hpp:
 
@@ -4226,6 +4920,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/numeric/conversion/detail/converter.hpp:
 
 /usr/include/boost/range/const_iterator.hpp:
+
+/usr/include/boost/fusion/container/list/detail/begin_impl.hpp:
 
 /usr/include/boost/range/begin.hpp:
 
@@ -4266,6 +4962,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/type_traits/is_rvalue_reference.hpp:
 
 /usr/include/boost/type_traits/detail/is_function_cxx_11.hpp:
+
+/usr/include/boost/fusion/iterator/deref.hpp:
 
 /usr/include/boost/type_traits/is_integral.hpp:
 
@@ -4319,6 +5017,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/c++/11/bitset:
 
+/usr/include/boost/fusion/view/joint_view/joint_view_fwd.hpp:
+
 /usr/include/boost/mpl/aux_/preprocessed/gcc/arg.hpp:
 
 /usr/include/boost/preprocessor/seq/for_each.hpp:
@@ -4345,6 +5045,10 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/pcl-1.12/pcl/io/pcd_io.h:
 
+/usr/include/boost/fusion/iterator/detail/segment_sequence.hpp:
+
+/usr/include/pcl-1.12/pcl/features/impl/feature.hpp:
+
 /usr/include/boost/numeric/conversion/cast.hpp:
 
 /usr/include/boost/mpl/eval_if.hpp:
@@ -4354,6 +5058,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/numeric/conversion/converter.hpp:
 
 /usr/include/boost/numeric/conversion/detail/meta.hpp:
+
+/usr/include/boost/fusion/adapted/mpl/detail/empty_impl.hpp:
 
 /usr/include/boost/mpl/aux_/comparison_op.hpp:
 
@@ -4387,15 +5093,21 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/config/no_tr1/cmath.hpp:
 
+/usr/include/boost/fusion/view/single_view/detail/next_impl.hpp:
+
 /usr/include/boost/type_traits/add_lvalue_reference.hpp:
 
 /usr/include/boost/assert/source_location.hpp:
+
+/usr/include/boost/fusion/algorithm/query/find_fwd.hpp:
 
 /usr/include/boost/mpl/list/list0.hpp:
 
 /usr/include/boost/preprocessor/stringize.hpp:
 
 /usr/include/boost/cstdint.hpp:
+
+/usr/include/boost/fusion/container/vector/detail/value_at_impl.hpp:
 
 /usr/include/boost/mpl/aux_/config/gcc.hpp:
 
@@ -4441,6 +5153,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/type_traits/make_unsigned.hpp:
 
+/usr/include/boost/fusion/iterator/advance.hpp:
+
 /usr/include/vtk-9.1/vtkABI.h:
 
 /usr/include/boost/type_traits/is_signed.hpp:
@@ -4453,7 +5167,11 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/type_traits/add_volatile.hpp:
 
+/usr/include/boost/fusion/view/iterator_range.hpp:
+
 /usr/include/boost/range/detail/has_member_size.hpp:
+
+/usr/include/boost/fusion/mpl/empty.hpp:
 
 /usr/include/boost/utility/base_from_member.hpp:
 
@@ -4551,6 +5269,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/asm-generic/int-ll64.h:
 
+/usr/include/boost/fusion/container/list/cons_iterator.hpp:
+
 /usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp:
@@ -4581,7 +5301,13 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/smart_ptr/shared_ptr.hpp:
 
+/usr/include/boost/fusion/view/single_view/detail/advance_impl.hpp:
+
 /usr/include/boost/smart_ptr/detail/sp_counted_base.hpp:
+
+/usr/include/boost/fusion/view/joint_view/joint_view.hpp:
+
+/usr/include/boost/fusion/sequence/intrinsic/segments.hpp:
 
 /usr/include/boost/smart_ptr/detail/sp_has_sync_intrinsics.hpp:
 
@@ -4590,6 +5316,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/range/detail/extract_optional_type.hpp:
 
 /usr/include/boost/smart_ptr/detail/sp_noexcept.hpp:
+
+/usr/include/boost/fusion/view/joint_view/detail/deref_impl.hpp:
 
 /usr/include/pcl-1.12/pcl/visualization/mouse_event.h:
 
@@ -4613,9 +5341,13 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 
 /usr/include/boost/date_time/posix_time/ptime.hpp:
 
+/usr/include/boost/fusion/container/list/cons_fwd.hpp:
+
 /usr/include/boost/date_time/posix_time/posix_time_system.hpp:
 
 /usr/include/boost/date_time/posix_time/posix_time_config.hpp:
+
+/usr/include/boost/fusion/container/vector/detail/distance_impl.hpp:
 
 /usr/include/boost/preprocessor/iteration/detail/bounds/lower1.hpp:
 
@@ -4632,6 +5364,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/date_time/period.hpp:
 
 /usr/include/boost/date_time/gregorian/greg_calendar.hpp:
+
+/usr/include/boost/fusion/view/single_view/detail/equal_to_impl.hpp:
 
 /usr/include/pcl-1.12/pcl/filters/filter.h:
 
@@ -4668,6 +5402,8 @@ CMakeFiles/segementation.dir/segementation.cpp.o: ../segementation.cpp \
 /usr/include/boost/date_time/posix_time/posix_time_duration.hpp:
 
 /usr/include/boost/interprocess/sync/detail/common_algorithms.hpp:
+
+/usr/include/boost/fusion/mpl/push_back.hpp:
 
 /usr/include/boost/move/utility_core.hpp:
 

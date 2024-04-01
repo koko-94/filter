@@ -194,6 +194,19 @@ correspondence/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/correspondence.dir/build.make CMakeFiles/correspondence.dir/build
 .PHONY : correspondence/fast
 
+#=============================================================================
+# Target rules for targets named hull
+
+# Build rule for target.
+hull: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hull
+.PHONY : hull
+
+# fast build rule for target.
+hull/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hull.dir/build.make CMakeFiles/hull.dir/build
+.PHONY : hull/fast
+
 correspondence.o: correspondence.cpp.o
 .PHONY : correspondence.o
 
@@ -241,6 +254,30 @@ filter.s: filter.cpp.s
 filter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/filter.cpp.s
 .PHONY : filter.cpp.s
+
+hull.o: hull.cpp.o
+.PHONY : hull.o
+
+# target to build an object file
+hull.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hull.dir/build.make CMakeFiles/hull.dir/hull.cpp.o
+.PHONY : hull.cpp.o
+
+hull.i: hull.cpp.i
+.PHONY : hull.i
+
+# target to preprocess a source file
+hull.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hull.dir/build.make CMakeFiles/hull.dir/hull.cpp.i
+.PHONY : hull.cpp.i
+
+hull.s: hull.cpp.s
+.PHONY : hull.s
+
+# target to generate assembly for a file
+hull.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hull.dir/build.make CMakeFiles/hull.dir/hull.cpp.s
+.PHONY : hull.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -348,6 +385,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... correspondence"
 	@echo "... filter"
+	@echo "... hull"
 	@echo "... myproject"
 	@echo "... normalvector_estimate"
 	@echo "... pclvs"
@@ -358,6 +396,9 @@ help:
 	@echo "... filter.o"
 	@echo "... filter.i"
 	@echo "... filter.s"
+	@echo "... hull.o"
+	@echo "... hull.i"
+	@echo "... hull.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -39,3 +39,7 @@ TARGET_LINK_LIBRARIES( myproject ${OpenCV_LIBS}
 ADD_EXECUTABLE( correspondence correspondence.cpp )
 TARGET_LINK_LIBRARIES( correspondence ${OpenCV_LIBS} 
     ${PCL_LIBRARIES} )  
+
+ADD_EXECUTABLE( hull hull.cpp )
+TARGET_LINK_LIBRARIES( hull ${OpenCV_LIBS} 
+    ${PCL_LIBRARIES} )  

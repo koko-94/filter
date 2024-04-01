@@ -1770,8 +1770,13 @@ CMakeFiles/normalvector_estimate.dir/normalvector_estimate.cpp.o: ../normalvecto
   /usr/include/boost/fusion/view/filter_view/detail/begin_impl.hpp \
   /usr/include/boost/fusion/view/filter_view/detail/end_impl.hpp \
   /usr/include/boost/fusion/view/filter_view/detail/size_impl.hpp \
-  /usr/include/pcl-1.12/pcl/common/impl/centroid.hpp
+  /usr/include/pcl-1.12/pcl/common/impl/centroid.hpp \
+  /usr/include/pcl-1.12/pcl/surface/gp3.h \
+  /usr/include/pcl-1.12/pcl/surface/reconstruction.h \
+  /usr/include/pcl-1.12/pcl/surface/impl/reconstruction.hpp
 
+
+/usr/include/pcl-1.12/pcl/surface/gp3.h:
 
 /usr/include/boost/fusion/view/filter_view/detail/size_impl.hpp:
 
@@ -2091,6 +2096,8 @@ CMakeFiles/normalvector_estimate.dir/normalvector_estimate.cpp.o: ../normalvecto
 
 /usr/include/boost/date_time/time_defs.hpp:
 
+/usr/include/pcl-1.12/pcl/surface/impl/reconstruction.hpp:
+
 /usr/include/boost/date_time/special_defs.hpp:
 
 /usr/include/boost/date_time/posix_time/posix_time_config.hpp:
@@ -2104,6 +2111,8 @@ CMakeFiles/normalvector_estimate.dir/normalvector_estimate.cpp.o: ../normalvecto
 /usr/include/boost/date_time/locale_config.hpp:
 
 /usr/include/boost/date_time/microsec_time_clock.hpp:
+
+/usr/include/pcl-1.12/pcl/surface/reconstruction.h:
 
 /usr/include/boost/interprocess/streams/bufferstream.hpp:
 

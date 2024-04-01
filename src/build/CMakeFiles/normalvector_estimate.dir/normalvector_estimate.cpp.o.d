@@ -1614,4 +1614,7 @@ CMakeFiles/normalvector_estimate.dir/normalvector_estimate.cpp.o: \
  /usr/include/boost/fusion/view/filter_view/detail/begin_impl.hpp \
  /usr/include/boost/fusion/view/filter_view/detail/end_impl.hpp \
  /usr/include/boost/fusion/view/filter_view/detail/size_impl.hpp \
- /usr/include/pcl-1.12/pcl/common/impl/centroid.hpp
+ /usr/include/pcl-1.12/pcl/common/impl/centroid.hpp \
+ /usr/include/pcl-1.12/pcl/surface/gp3.h \
+ /usr/include/pcl-1.12/pcl/surface/reconstruction.h \
+ /usr/include/pcl-1.12/pcl/surface/impl/reconstruction.hpp

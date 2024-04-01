@@ -195,4 +195,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/segementation.dir/DependInfo.cmake"
   "CMakeFiles/myproject.dir/DependInfo.cmake"
   "CMakeFiles/correspondence.dir/DependInfo.cmake"
+  "CMakeFiles/hull.dir/DependInfo.cmake"
   )

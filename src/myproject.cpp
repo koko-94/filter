@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
         std::cout << "read scene success." << std::endl;
 
     // 1 估计场景云的法线
-    pcl::NormalEstimationOMP<PointType, NormalType> norm_est;
+    pcl::NormalEstimation<PointType, NormalType> norm_est;
     norm_est.setKSearch(10);
     norm_est.setInputCloud(model);
     norm_est.compute(*model_normals);
@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
     std::cout << "Scene total points: " << scene->size() << "; Selected Keypoints: " << scene_keypoints->size() << std::endl;
 
     // 3 将关键点关联到SHOT特征描述符以执行模型aa和场景的关键点匹配并确定点对点对应关系。
-    pcl::SHOTEstimationOMP<PointType, NormalType, DescriptorType> descr_est;
+    pcl::SHOTEstimation<PointType, NormalType, DescriptorType> descr_est;
     descr_est.setRadiusSearch(descr_rad_);
 
     descr_est.setInputCloud(model_keypoints);
@@ -135,43 +135,9 @@ int main(int argc, char *argv[])
     std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f>> rototranslations;
     std::vector<pcl::Correspondences> clustered_corrs;
 
-    // pcl::PointCloud<RFType>::Ptr model_rf(new pcl::PointCloud<RFType>());
-    // pcl::PointCloud<RFType>::Ptr scene_rf(new pcl::PointCloud<RFType>());
-    // // 计算LRF
-    // pcl::BOARDLocalReferenceFrameEstimation<PointType, NormalType, RFType> rf_est;
-    // rf_est.setFindHoles(true);
-    // rf_est.setRadiusSearch(rf_rad_);
-
-    // rf_est.setInputCloud(model_keypoints);
-    // rf_est.setInputNormals(model_normals);
-    // rf_est.setSearchSurface(model);
-    // rf_est.compute(*model_rf);
-
-    // rf_est.setInputCloud(scene_keypoints);
-    // rf_est.setInputNormals(scene_normals);
-    // rf_est.setSearchSurface(scene);
-    // rf_est.compute(*scene_rf);
-
-    // //  Clustering
-    // pcl::Hough3DGrouping<PointType, PointType, RFType, RFType> clusterer;
-    // clusterer.setHoughBinSize(cg_size_);
-    // clusterer.setHoughThreshold(cg_thresh_);
-    // clusterer.setUseInterpolation(true);
-    // clusterer.setUseDistanceWeight(false);
-
-    // clusterer.setInputCloud(model_keypoints);
-    // clusterer.setInputRf(model_rf);
-    // clusterer.setSceneCloud(scene_keypoints);
-    // clusterer.setSceneRf(scene_rf);
-    // clusterer.setModelSceneCorrespondences(model_scene_corrs);
-
-    // // clusterer.cluster (clustered_corrs);
-    // //  识别，计算目标位姿
-    // clusterer.recognize(rototranslations, clustered_corrs);
-
     pcl::GeometricConsistencyGrouping<PointType, PointType> gc_clusterer;
     gc_clusterer.setGCSize(cg_size_);
-    gc_clusterer.setGCThreshold(cg_thresh_);
+    gc_clusterer.setGCThreshold(20.0f); // min_num
 
     gc_clusterer.setInputCloud(model_keypoints);
     gc_clusterer.setSceneCloud(scene_keypoints);

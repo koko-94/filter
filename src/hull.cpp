@@ -19,6 +19,39 @@ typedef pcl::PointXYZ PointT;
 float area, volume;
 std::string model_filename_;
 
+// 计算凸包并返回多边形、体积和面积
+int computeConvexHull(const pcl::PointCloud<pcl::PointXYZ>::Ptr &cloud,
+                      const pcl::PointCloud<pcl::PointXYZ>::Ptr &cloud_hull,
+                      std::vector<pcl::Vertices> &polygons)
+{
+
+    float volume;
+    float area;
+    // 创建凸包对象
+    pcl::ConvexHull<pcl::PointXYZ> convex_Hull;
+    // 设置输入点云
+    convex_Hull.setInputCloud(cloud);
+    // 设置维度为3D
+    convex_Hull.setDimension(3);
+    // 设置计算面积和体积
+    convex_Hull.setComputeAreaVolume(true);
+
+    pcl::PointCloud<PointT>::Ptr cloud2(new pcl::PointCloud<PointT>);
+    // 重建凸包
+    convex_Hull.reconstruct(*cloud_hull, polygons);
+    // *cloud_hull = *cloud2;
+
+    // 获取体积和面积
+    volume = convex_Hull.getTotalVolume();
+    area = convex_Hull.getTotalArea();
+
+    // 输出结果
+    std::cout << "体积: " << volume << std::endl;
+    std::cout << "面积: " << area << std::endl;
+
+    return true;
+}
+
 int main(int argc, char *argv[])
 {
     pcl::PointCloud<PointT>::Ptr cloud(new pcl::PointCloud<PointT>);
@@ -31,22 +64,12 @@ int main(int argc, char *argv[])
     }
     // 凸包
     std::vector<pcl::Vertices> polygons; // 保存的是凸包多边形的顶点坐标
-    pcl::PolygonMesh model;
-    pcl::ConvexHull<pcl::PointXYZ> convex_Hull;
-    convex_Hull.setInputCloud(cloud);
-    convex_Hull.setDimension(3);
-    convex_Hull.setComputeAreaVolume(true);
-    convex_Hull.reconstruct(*cloud2, polygons);
-    volume = convex_Hull.getTotalVolume();
-    area = convex_Hull.getTotalArea();
-    std::cout
-        << "体积: " << volume << std::endl;
-    std::cout
-        << "面积: " << area << std::endl;
-    cout << "surface size :" << cloud2->size() << endl;
+    // pcl::PolygonMesh model;
 
+    computeConvexHull(cloud, cloud2, polygons);
     // 凹包
-    pcl::ConcaveHull<PointT> concave_Hull;
+    pcl::ConcaveHull<PointT>
+        concave_Hull;
     concave_Hull.setInputCloud(cloud);
     concave_Hull.setAlpha(0.1);
     concave_Hull.reconstruct(*cloud_concave);

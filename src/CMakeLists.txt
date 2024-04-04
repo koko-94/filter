@@ -43,3 +43,7 @@ TARGET_LINK_LIBRARIES( correspondence ${OpenCV_LIBS}
 ADD_EXECUTABLE( hull hull.cpp )
 TARGET_LINK_LIBRARIES( hull ${OpenCV_LIBS} 
     ${PCL_LIBRARIES} )  
+
+ADD_EXECUTABLE( corrview corrview.cpp )
+TARGET_LINK_LIBRARIES( corrview ${OpenCV_LIBS} 
+    ${PCL_LIBRARIES} )  

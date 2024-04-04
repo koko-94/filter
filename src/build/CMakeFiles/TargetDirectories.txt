@@ -5,5 +5,6 @@
 /home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/myproject.dir
 /home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/correspondence.dir
 /home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/hull.dir
+/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/corrview.dir
 /home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/edit_cache.dir
 /home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/rebuild_cache.dir

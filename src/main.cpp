@@ -34,8 +34,8 @@ int main(int argc, char **argv)
     pcl::PointCloud<PointT>::Ptr cloud2(new pcl::PointCloud<PointT>);
     // pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud1(new pcl::PointCloud<pcl::PointXYZRGBA>);
     // 导入点云
-    pcl::io::loadPCDFile("../../data/map.pcd", *cloud1);
-    pcl::io::loadPCDFile("../../data/rabbit.pcd", *cloud2);
+    // pcl::io::loadPCDFile("../../data/map.pcd", *cloud1);
+    pcl::io::loadPCDFile("../../data/square10cm.obj", *cloud2);
 
     // 定义对象
     pcl::visualization::PCLVisualizer viewer;

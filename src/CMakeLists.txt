@@ -47,3 +47,11 @@ TARGET_LINK_LIBRARIES( hull ${OpenCV_LIBS}
 ADD_EXECUTABLE( corrview corrview.cpp )
 TARGET_LINK_LIBRARIES( corrview ${OpenCV_LIBS} 
     ${PCL_LIBRARIES} )  
+
+ADD_EXECUTABLE( montecarlo montecarlo.cpp )
+TARGET_LINK_LIBRARIES( montecarlo ${OpenCV_LIBS} 
+    ${PCL_LIBRARIES} )  
+
+ADD_EXECUTABLE( cal_mesh cal_mesh.cpp )
+TARGET_LINK_LIBRARIES( cal_mesh ${OpenCV_LIBS} 
+    ${PCL_LIBRARIES} )  

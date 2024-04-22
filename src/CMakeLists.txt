@@ -55,3 +55,7 @@ TARGET_LINK_LIBRARIES( montecarlo ${OpenCV_LIBS}
 ADD_EXECUTABLE( cal_mesh cal_mesh.cpp )
 TARGET_LINK_LIBRARIES( cal_mesh ${OpenCV_LIBS} 
     ${PCL_LIBRARIES} )  
+
+ADD_EXECUTABLE( subtraction subtraction.cpp )
+TARGET_LINK_LIBRARIES( subtraction ${OpenCV_LIBS} 
+    ${PCL_LIBRARIES} )  

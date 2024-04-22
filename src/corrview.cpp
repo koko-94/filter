@@ -64,7 +64,8 @@ Function:main
 using namespace std;
 using namespace pcl;
 
-typedef pcl::PointXYZRGBA PointT;
+// typedef pcl::PointXYZRGBA PointT;
+typedef pcl::PointXYZ PointT;
 typedef pcl::Normal NormalType;
 typedef pcl::SHOT352 DescriptorType;
 

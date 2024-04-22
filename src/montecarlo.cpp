@@ -28,6 +28,7 @@ typedef pcl::PointXYZ PointT;
 int main(int argc, char *argv[])
 {
     pcl::PointCloud<PointT>::Ptr cloud(new pcl::PointCloud<PointT>);
+    pcl::PointCloud<PointT>::Ptr outputcloud(new pcl::PointCloud<PointT>);
     if (pcl::io::loadPCDFile<PointT>(argv[1], *cloud) == -1)
     {
         PCL_ERROR("Couldn't read file inputcloud \n");
@@ -73,12 +74,14 @@ int main(int argc, char *argv[])
     int num_samples = 10000;
     // 使用蒙特卡罗方法生成随机点
     srand(time(NULL));
+    pcl::PointXYZ pt;
     for (int i = 0; i < num_samples; ++i)
     {
-        float x = min_pt[0] + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (max_pt[0] - min_pt[0])));
-        float y = min_pt[1] + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (max_pt[1] - min_pt[1])));
-        float z = min_pt[2] + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (max_pt[2] - min_pt[2])));
-        pcl::PointXYZ pt;
+        // 随机填充点公式：最值之间/ 最小值+随机值/随机值最大值*区间长度
+        float x = min_pt[0] + static_cast<float>(rand()) / static_cast<float>(RAND_MAX) * (max_pt[0] - min_pt[0]);
+        float y = min_pt[1] + static_cast<float>(rand()) / static_cast<float>(RAND_MAX) * (max_pt[1] - min_pt[1]);
+        float z = min_pt[2] + static_cast<float>(rand()) / static_cast<float>(RAND_MAX) * (max_pt[2] - min_pt[2]);
+
         pt.x = x;
         pt.y = y;
         pt.z = z;
@@ -89,13 +92,16 @@ int main(int argc, char *argv[])
         // // 可以使用射线法、质心法等
         // if (is_inside)
         // {
-        //     internal_cloud->push_back(pt);
+        internal_cloud->push_back(pt);
         // }
     }
 
+    std::cout << "outputcloud points: " << internal_cloud->size() << std::endl;
+    // 保存
+    pcl::io::savePCDFileASCII("../../data/filled_square.pcd", *internal_cloud);
     //  Viewer
     pcl::visualization::PCLVisualizer viewer("viewer");
-    viewer.addPointCloud(cloud, "inputcloud");
+    viewer.addPointCloud(internal_cloud, "inputcloud");
     viewer.spin();
 
     return 0;

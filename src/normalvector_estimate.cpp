@@ -23,6 +23,8 @@ Function:法向量估计
 #include <pcl/conversions.h>
 #include <cmath>
 
+#include <pcl/surface/mls.h> //最小二乘法平滑滤波
+
 // double deg2rad(double degrees)
 // {
 //     return degrees * M_PI / 180.0;
@@ -79,6 +81,22 @@ int main(int argc, char **argv)
     // 3. 合并点云和法线
     pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
     pcl::concatenateFields(*cloud, *cloud_normals, *cloud_with_normals);
+
+    // 最小二乘法平滑处理
+    pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>());
+    pcl::MovingLeastSquares<pcl::PointXYZ, pcl::PointNormal> mls;
+    mls.setComputeNormals(true);
+    mls.setInputCloud(cloud);
+    mls.setSearchMethod(tree);
+    mls.setPolynomialOrder(2); // 2阶
+    mls.setSearchRadius(0.2);  // 用于拟合的K近邻半径。在这个半径里进行表面映射和曲面拟合。半径越小拟合后曲面的失真度越小，反之有可能出现过拟合的现象。
+    // mls.setUpsamplingMethod(pcl::MovingLeastSquares<pcl::PointXYZ, pcl::PointNormal>::SAMPLE_LOCAL_PLANE);
+    // mls.setUpsamplingRadius(0.04);
+    // mls.setUpsamplingStepSize(0.02);
+    // mls.setPointDensity(100);
+    mls.process(*cloud_with_normals);
+    pcl::copyPointCloud(*cloud_with_normals, *cloud_filtered);
+
     // 定义搜索树对象
     pcl::search::KdTree<pcl::PointNormal>::Ptr tree2(new pcl::search::KdTree<pcl::PointNormal>);
     tree2->setInputCloud(cloud_with_normals); // 点云搜索树
@@ -86,7 +104,7 @@ int main(int argc, char **argv)
     pcl::GreedyProjectionTriangulation<pcl::PointNormal> gp3; // 定义三角化对象
     pcl::PolygonMesh triangles;                               // 定义最后网格模型
     gp3.setInputCloud(cloud_with_normals);                    // 输入
-    gp3.setSearchRadius(0.2);                                 // 搜索半径
+    gp3.setSearchRadius(0.3);                                 // 搜索半径
     gp3.setMu(2.5);                                           // 设置被样本点搜索其最近邻点的最远距离，为了使用点云密度的变化
     gp3.setMaximumNearestNeighbors(100);                      // 样本点最大可搜索邻域个数
     gp3.setMaximumSurfaceAngle(M_PI / 4);                     // 设置最大表面角度，用于控制三角化结果的平滑程
@@ -104,7 +122,7 @@ int main(int argc, char **argv)
     std::vector<int> parts = gp3.getPartIDs();
     std::vector<int> states = gp3.getPointStates();
 
-    std::cout << volumeOfMesh(triangles) << std::endl;
+    // std::cout << volumeOfMesh(triangles) << std::endl;
 
     // Viewer
     pcl::visualization::PCLVisualizer viewer("viewer");

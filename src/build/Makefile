@@ -246,6 +246,19 @@ cal_mesh/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cal_mesh.dir/build.make CMakeFiles/cal_mesh.dir/build
 .PHONY : cal_mesh/fast
 
+#=============================================================================
+# Target rules for targets named subtraction
+
+# Build rule for target.
+subtraction: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 subtraction
+.PHONY : subtraction
+
+# fast build rule for target.
+subtraction/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/subtraction.dir/build.make CMakeFiles/subtraction.dir/build
+.PHONY : subtraction/fast
+
 cal_mesh.o: cal_mesh.cpp.o
 .PHONY : cal_mesh.o
 
@@ -486,6 +499,30 @@ segementation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/segementation.dir/build.make CMakeFiles/segementation.dir/segementation.cpp.s
 .PHONY : segementation.cpp.s
 
+subtraction.o: subtraction.cpp.o
+.PHONY : subtraction.o
+
+# target to build an object file
+subtraction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/subtraction.dir/build.make CMakeFiles/subtraction.dir/subtraction.cpp.o
+.PHONY : subtraction.cpp.o
+
+subtraction.i: subtraction.cpp.i
+.PHONY : subtraction.i
+
+# target to preprocess a source file
+subtraction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/subtraction.dir/build.make CMakeFiles/subtraction.dir/subtraction.cpp.i
+.PHONY : subtraction.cpp.i
+
+subtraction.s: subtraction.cpp.s
+.PHONY : subtraction.s
+
+# target to generate assembly for a file
+subtraction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/subtraction.dir/build.make CMakeFiles/subtraction.dir/subtraction.cpp.s
+.PHONY : subtraction.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -504,6 +541,7 @@ help:
 	@echo "... normalvector_estimate"
 	@echo "... pclvs"
 	@echo "... segementation"
+	@echo "... subtraction"
 	@echo "... cal_mesh.o"
 	@echo "... cal_mesh.i"
 	@echo "... cal_mesh.s"
@@ -534,6 +572,9 @@ help:
 	@echo "... segementation.o"
 	@echo "... segementation.i"
 	@echo "... segementation.s"
+	@echo "... subtraction.o"
+	@echo "... subtraction.i"
+	@echo "... subtraction.s"
 .PHONY : help
 
 

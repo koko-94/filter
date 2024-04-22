@@ -22,6 +22,10 @@ Function:some filter for pcl：体素滤波，直通滤波，离群值滤波（�
 #include <pcl/ModelCoefficients.h>                   //模型库
 #include <pcl/filters/project_inliers.h>             //
 
+#include <pcl/surface/mls.h>        //最小二乘法平滑滤波
+#include <pcl/features/normal_3d.h> //特征库
+#include <pcl/kdtree/kdtree_flann.h>
+
 using namespace std;
 using namespace pcl;
 
@@ -37,7 +41,7 @@ void SORfilter(int num, float threshoud, const pcl::PointCloud<PointT>::Ptr &inp
 void RORfilter(int num, float radius, const pcl::PointCloud<PointT>::Ptr &inputcloud,
                const pcl::PointCloud<PointT>::Ptr &outputcloud);
 
-int main()
+int main(int argc, char **argv)
 {
     pcl::PointCloud<PointT>::Ptr cloud(new pcl::PointCloud<PointT>);
     pcl::PointCloud<PointT>::Ptr cloud_filtered(new pcl::PointCloud<PointT>);
@@ -85,7 +89,7 @@ int main()
 
     // pcl::PCDReader reader;                                    // 设置读入器
     // reader.read("../../data/table_scene_lms400.pcd", *cloud); // 读取点云
-    pcl::io::loadPCDFile("../../data/table_scene_lms400.pcd", *cloud);
+    pcl::io::loadPCDFile(argv[1], *cloud);
 
     // 应用体素滤波器
     // voxelfilter(0.01f, cloud, cloud_Voxelfiltered);
@@ -93,6 +97,41 @@ int main()
     // SORfilter(50, 1.0f, cloud, cloud_SORfiltered);
     // ROR
     // RORfilter(3, 0.005f, cloud, cloud_RORfiltered);
+    // 3. 移动最小二乘法平滑
+
+    pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> ne;
+    ne.setInputCloud(cloud);
+    pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>());
+    ne.setSearchMethod(tree);
+    pcl::PointCloud<pcl::Normal>::Ptr normals(new pcl::PointCloud<pcl::Normal>);
+    ne.setRadiusSearch(0.03);
+    ne.compute(*normals);
+    pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
+    pcl::concatenateFields(*cloud, *normals, *cloud_with_normals);
+
+    pcl::MovingLeastSquares<pcl::PointXYZ, pcl::PointNormal> mls;
+
+    mls.setComputeNormals(true);
+    mls.setInputCloud(cloud);
+    mls.setSearchMethod(tree);
+    mls.setPolynomialOrder(2); // 2阶
+    mls.setSearchRadius(1);    // 用于拟合的K近邻半径。在这个半径里进行表面映射和曲面拟合。半径越小拟合后曲面的失真度越小，反之有可能出现过拟合的现象。
+
+    // mls.setUpsamplingMethod(RANDOM_UNIFORM_DENSITY); // 增加密度较小区域的密度对于holes的填补却无能为力，具体方法要结合参数使用
+    mls.process(*cloud_with_normals);
+    pcl::copyPointCloud(*cloud_with_normals, *cloud_filtered);
+    //  Viewer
+    pcl::visualization::PCLVisualizer viewer("viewer");
+    int v1(1);
+    int v2(2);
+    // createViewPort 参数是 double xmin, double ymin, double xmax, double ymax, int &viewport
+    viewer.createViewPort(0, 0, 0.5, 1, v1);
+    viewer.createViewPort(0.5, 0, 1, 1, v2);
+    // pcl::visualization::PointCloudColorHandlerRGBField<PointTRGB> rgb(cloud); // rgb 显示本身颜色
+
+    viewer.addPointCloud(cloud, "cloud", v1);
+    viewer.addPointCloud(cloud_filtered, "RORfiltered", v2);
+    viewer.spin();
 
     return 0;
 }

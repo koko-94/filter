@@ -8,5 +8,6 @@
 /home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/corrview.dir
 /home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/montecarlo.dir
 /home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/cal_mesh.dir
+/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/subtraction.dir
 /home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/edit_cache.dir
 /home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles/rebuild_cache.dir

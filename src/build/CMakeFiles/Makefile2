@@ -73,6 +73,7 @@ all: CMakeFiles/hull.dir/all
 all: CMakeFiles/corrview.dir/all
 all: CMakeFiles/montecarlo.dir/all
 all: CMakeFiles/cal_mesh.dir/all
+all: CMakeFiles/subtraction.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -90,6 +91,7 @@ clean: CMakeFiles/hull.dir/clean
 clean: CMakeFiles/corrview.dir/clean
 clean: CMakeFiles/montecarlo.dir/clean
 clean: CMakeFiles/cal_mesh.dir/clean
+clean: CMakeFiles/subtraction.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -351,6 +353,32 @@ cal_mesh: CMakeFiles/cal_mesh.dir/rule
 CMakeFiles/cal_mesh.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cal_mesh.dir/build.make CMakeFiles/cal_mesh.dir/clean
 .PHONY : CMakeFiles/cal_mesh.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/subtraction.dir
+
+# All Build rule for target.
+CMakeFiles/subtraction.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/subtraction.dir/build.make CMakeFiles/subtraction.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/subtraction.dir/build.make CMakeFiles/subtraction.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=21,22 "Built target subtraction"
+.PHONY : CMakeFiles/subtraction.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/subtraction.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/subtraction.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles 0
+.PHONY : CMakeFiles/subtraction.dir/rule
+
+# Convenience name for target.
+subtraction: CMakeFiles/subtraction.dir/rule
+.PHONY : subtraction
+
+# clean rule for target.
+CMakeFiles/subtraction.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/subtraction.dir/build.make CMakeFiles/subtraction.dir/clean
+.PHONY : CMakeFiles/subtraction.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

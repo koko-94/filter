@@ -57,14 +57,16 @@ int main(int argc, char *argv[])
 
     //  Load clouds
     //
-    if (pcl::io::loadPCDFile("../../data/milk.pcd", *model) < 0)
+    if (pcl::io::loadPCDFile("../../data/new/line_zhixian.pcd", *model) < 0)
+    // if (pcl::io::loadPCDFile("../../data/milk.pcd", *model) < 0)
     {
         std::cout << "Error loading model cloud." << std::endl;
         return (-1);
     }
     else
         std::cout << "read model success." << std::endl;
-    if (pcl::io::loadPCDFile("../../data/milk_cartoon_all_small_clorox.pcd", *scene) < 0)
+    if (pcl::io::loadPCDFile("../../data/new/whole_line.pcd", *scene) < 0)
+    // if (pcl::io::loadPCDFile("../../data/milk_cartoon_all_small_clorox.pcd", *scene) < 0)
     {
         std::cout << "Error loading scene cloud." << std::endl;
         return (-1);
@@ -74,7 +76,8 @@ int main(int argc, char *argv[])
 
     // 1 估计场景云的法线
     pcl::NormalEstimation<PointType, NormalType> norm_est;
-    norm_est.setKSearch(10);
+    // norm_est.setKSearch(20);
+    norm_est.setRadiusSearch(5); // 利用半径为3cm的球体中的所有邻点进行估计
     norm_est.setInputCloud(model);
     norm_est.compute(*model_normals);
 
@@ -84,12 +87,14 @@ int main(int argc, char *argv[])
     // 2 对每个云进行降采样以找到少量关键点
     pcl::UniformSampling<PointType> uniform_sampling;
     uniform_sampling.setInputCloud(model);
-    uniform_sampling.setRadiusSearch(0.01f);   // 搜索半径
+    uniform_sampling.setRadiusSearch(2.0f); // 搜索半径
+    // uniform_sampling.setRadiusSearch(0.01f);   // 搜索半径
     uniform_sampling.filter(*model_keypoints); // 存储降采样后的点云
     std::cout << "Model total points: " << model->size() << "; Selected Keypoints: " << model_keypoints->size() << std::endl;
 
     uniform_sampling.setInputCloud(scene);
-    uniform_sampling.setRadiusSearch(0.03f);
+    uniform_sampling.setRadiusSearch(2.0f);
+    // uniform_sampling.setRadiusSearch(0.03f);
     uniform_sampling.filter(*scene_keypoints);
     std::cout << "Scene total points: " << scene->size() << "; Selected Keypoints: " << scene_keypoints->size() << std::endl;
 
@@ -104,6 +109,7 @@ int main(int argc, char *argv[])
 
     descr_est.setInputCloud(scene_keypoints);
     descr_est.setInputNormals(scene_normals);
+    // descr_est.setSearchSurface(scene);
     descr_est.setSearchSurface(scene);
     descr_est.compute(*scene_descriptors);
 

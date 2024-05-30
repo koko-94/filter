@@ -1,3 +1,15 @@
+/**************************************************************************
+
+Author: SHR
+
+Date:2024.4.19
+
+FileName: cal_mesh.cpp
+
+Function:三角化
+
+**************************************************************************/
+
 #include <iostream>
 #include <pcl/point_types.h>
 #include <pcl/io/obj_io.h>

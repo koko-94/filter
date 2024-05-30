@@ -259,6 +259,19 @@ subtraction/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/subtraction.dir/build.make CMakeFiles/subtraction.dir/build
 .PHONY : subtraction/fast
 
+#=============================================================================
+# Target rules for targets named cylinder
+
+# Build rule for target.
+cylinder: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cylinder
+.PHONY : cylinder
+
+# fast build rule for target.
+cylinder/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cylinder.dir/build.make CMakeFiles/cylinder.dir/build
+.PHONY : cylinder/fast
+
 cal_mesh.o: cal_mesh.cpp.o
 .PHONY : cal_mesh.o
 
@@ -330,6 +343,30 @@ corrview.s: corrview.cpp.s
 corrview.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/corrview.dir/build.make CMakeFiles/corrview.dir/corrview.cpp.s
 .PHONY : corrview.cpp.s
+
+cylinder.o: cylinder.cpp.o
+.PHONY : cylinder.o
+
+# target to build an object file
+cylinder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cylinder.dir/build.make CMakeFiles/cylinder.dir/cylinder.cpp.o
+.PHONY : cylinder.cpp.o
+
+cylinder.i: cylinder.cpp.i
+.PHONY : cylinder.i
+
+# target to preprocess a source file
+cylinder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cylinder.dir/build.make CMakeFiles/cylinder.dir/cylinder.cpp.i
+.PHONY : cylinder.cpp.i
+
+cylinder.s: cylinder.cpp.s
+.PHONY : cylinder.s
+
+# target to generate assembly for a file
+cylinder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cylinder.dir/build.make CMakeFiles/cylinder.dir/cylinder.cpp.s
+.PHONY : cylinder.cpp.s
 
 filter.o: filter.cpp.o
 .PHONY : filter.o
@@ -534,6 +571,7 @@ help:
 	@echo "... cal_mesh"
 	@echo "... correspondence"
 	@echo "... corrview"
+	@echo "... cylinder"
 	@echo "... filter"
 	@echo "... hull"
 	@echo "... montecarlo"
@@ -551,6 +589,9 @@ help:
 	@echo "... corrview.o"
 	@echo "... corrview.i"
 	@echo "... corrview.s"
+	@echo "... cylinder.o"
+	@echo "... cylinder.i"
+	@echo "... cylinder.s"
 	@echo "... filter.o"
 	@echo "... filter.i"
 	@echo "... filter.s"

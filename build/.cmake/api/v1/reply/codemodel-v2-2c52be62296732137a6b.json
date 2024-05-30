@@ -1,0 +1,159 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Project",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "cal_mesh::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cal_mesh-Debug-ff349cb728ec1efb7557.json",
+					"name" : "cal_mesh",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "correspondence::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-correspondence-Debug-7eade323bf9be7e933d1.json",
+					"name" : "correspondence",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "corrview::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-corrview-Debug-9c6bc408f253d619f060.json",
+					"name" : "corrview",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cylinder::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cylinder-Debug-58b9db07be8a4e7498c4.json",
+					"name" : "cylinder",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "filter::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-filter-Debug-7380855ae193cfb3a232.json",
+					"name" : "filter",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hull::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hull-Debug-e5d4bc14a5a250a49826.json",
+					"name" : "hull",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "montecarlo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-montecarlo-Debug-dbb02244e244a41171be.json",
+					"name" : "montecarlo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "myproject::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-myproject-Debug-3a88ecebd7926ae26aea.json",
+					"name" : "myproject",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "normalvector_estimate::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-normalvector_estimate-Debug-1bbd9342817dec5b0400.json",
+					"name" : "normalvector_estimate",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pclvs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pclvs-Debug-97f79ff626a5f02725a2.json",
+					"name" : "pclvs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "segementation::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-segementation-Debug-6370a5946418281708d0.json",
+					"name" : "segementation",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "subtraction::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-subtraction-Debug-56dcb176dc9cc1eabdba.json",
+					"name" : "subtraction",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/cangyi/\u684c\u9762/pointcloud/filter/build",
+		"source" : "/home/cangyi/\u684c\u9762/pointcloud/filter/src"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

@@ -70,6 +70,16 @@
         "typeinfo": "cpp",
         "variant": "cpp",
         "core": "cpp",
-        "numericaldiff": "cpp"
-    }
+        "numericaldiff": "cpp",
+        "*.ipp": "cpp",
+        "hash_map": "cpp",
+        "hash_set": "cpp",
+        "valarray": "cpp",
+        "csignal": "cpp",
+        "any": "cpp",
+        "codecvt": "cpp",
+        "future": "cpp",
+        "shared_mutex": "cpp"
+    },
+    "cmake.sourceDirectory": "/home/cangyi/桌面/pointcloud/filter/src"
 }

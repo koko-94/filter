@@ -74,6 +74,7 @@ all: CMakeFiles/corrview.dir/all
 all: CMakeFiles/montecarlo.dir/all
 all: CMakeFiles/cal_mesh.dir/all
 all: CMakeFiles/subtraction.dir/all
+all: CMakeFiles/cylinder.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -92,6 +93,7 @@ clean: CMakeFiles/corrview.dir/clean
 clean: CMakeFiles/montecarlo.dir/clean
 clean: CMakeFiles/cal_mesh.dir/clean
 clean: CMakeFiles/subtraction.dir/clean
+clean: CMakeFiles/cylinder.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -101,7 +103,7 @@ clean: CMakeFiles/subtraction.dir/clean
 CMakeFiles/pclvs.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pclvs.dir/build.make CMakeFiles/pclvs.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pclvs.dir/build.make CMakeFiles/pclvs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=17,18 "Built target pclvs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=19,20 "Built target pclvs"
 .PHONY : CMakeFiles/pclvs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -127,7 +129,7 @@ CMakeFiles/pclvs.dir/clean:
 CMakeFiles/filter.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/filter.dir/build.make CMakeFiles/filter.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=7,8 "Built target filter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=9,10 "Built target filter"
 .PHONY : CMakeFiles/filter.dir/all
 
 # Build rule for subdir invocation for target.
@@ -153,7 +155,7 @@ CMakeFiles/filter.dir/clean:
 CMakeFiles/normalvector_estimate.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/normalvector_estimate.dir/build.make CMakeFiles/normalvector_estimate.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/normalvector_estimate.dir/build.make CMakeFiles/normalvector_estimate.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=15,16 "Built target normalvector_estimate"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=17,18 "Built target normalvector_estimate"
 .PHONY : CMakeFiles/normalvector_estimate.dir/all
 
 # Build rule for subdir invocation for target.
@@ -179,7 +181,7 @@ CMakeFiles/normalvector_estimate.dir/clean:
 CMakeFiles/segementation.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/segementation.dir/build.make CMakeFiles/segementation.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/segementation.dir/build.make CMakeFiles/segementation.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=19,20 "Built target segementation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=21,22 "Built target segementation"
 .PHONY : CMakeFiles/segementation.dir/all
 
 # Build rule for subdir invocation for target.
@@ -205,7 +207,7 @@ CMakeFiles/segementation.dir/clean:
 CMakeFiles/myproject.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/myproject.dir/build.make CMakeFiles/myproject.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/myproject.dir/build.make CMakeFiles/myproject.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=13,14 "Built target myproject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=15,16 "Built target myproject"
 .PHONY : CMakeFiles/myproject.dir/all
 
 # Build rule for subdir invocation for target.
@@ -257,7 +259,7 @@ CMakeFiles/correspondence.dir/clean:
 CMakeFiles/hull.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hull.dir/build.make CMakeFiles/hull.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hull.dir/build.make CMakeFiles/hull.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=9,10 "Built target hull"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=11,12 "Built target hull"
 .PHONY : CMakeFiles/hull.dir/all
 
 # Build rule for subdir invocation for target.
@@ -309,7 +311,7 @@ CMakeFiles/corrview.dir/clean:
 CMakeFiles/montecarlo.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/montecarlo.dir/build.make CMakeFiles/montecarlo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/montecarlo.dir/build.make CMakeFiles/montecarlo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=11,12 "Built target montecarlo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=13,14 "Built target montecarlo"
 .PHONY : CMakeFiles/montecarlo.dir/all
 
 # Build rule for subdir invocation for target.
@@ -361,7 +363,7 @@ CMakeFiles/cal_mesh.dir/clean:
 CMakeFiles/subtraction.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/subtraction.dir/build.make CMakeFiles/subtraction.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/subtraction.dir/build.make CMakeFiles/subtraction.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=21,22 "Built target subtraction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=23,24 "Built target subtraction"
 .PHONY : CMakeFiles/subtraction.dir/all
 
 # Build rule for subdir invocation for target.
@@ -379,6 +381,32 @@ subtraction: CMakeFiles/subtraction.dir/rule
 CMakeFiles/subtraction.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/subtraction.dir/build.make CMakeFiles/subtraction.dir/clean
 .PHONY : CMakeFiles/subtraction.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/cylinder.dir
+
+# All Build rule for target.
+CMakeFiles/cylinder.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cylinder.dir/build.make CMakeFiles/cylinder.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cylinder.dir/build.make CMakeFiles/cylinder.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles --progress-num=7,8 "Built target cylinder"
+.PHONY : CMakeFiles/cylinder.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/cylinder.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cylinder.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cangyi/桌面/pointcloud/filter/src/build/CMakeFiles 0
+.PHONY : CMakeFiles/cylinder.dir/rule
+
+# Convenience name for target.
+cylinder: CMakeFiles/cylinder.dir/rule
+.PHONY : cylinder
+
+# clean rule for target.
+CMakeFiles/cylinder.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cylinder.dir/build.make CMakeFiles/cylinder.dir/clean
+.PHONY : CMakeFiles/cylinder.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

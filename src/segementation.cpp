@@ -181,7 +181,8 @@ int main(int argc, char **argv)
     pcl::PCDReader reader;
     pcl::PointCloud<PointT>::Ptr cloud(new pcl::PointCloud<PointT>),
         cloud_f(new pcl::PointCloud<PointT>);
-    reader.read("../../data/table_scene_lms400.pcd", *cloud);
+    reader.read("wanduan.pcd", *cloud);
+    // reader.read("../../data/new/fracture_line.pcd", *cloud);
     std::cout << "PointCloud before filtering has: " << cloud->size() << " data points." << std::endl;
 
     // (2)体素滤波
@@ -189,7 +190,8 @@ int main(int argc, char **argv)
     pcl::VoxelGrid<pcl::PointXYZ> vg;
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_filtered(new pcl::PointCloud<pcl::PointXYZ>);
     vg.setInputCloud(cloud);
-    vg.setLeafSize(0.01f, 0.01f, 0.01f);
+    // vg.setLeafSize(0.01f, 0.01f, 0.01f);
+    vg.setLeafSize(1.0f, 1.0f, 1.0f);
     vg.filter(*cloud_filtered);
     std::cout << "PointCloud after filtering has: " << cloud_filtered->size() << " data points." << std::endl; //
 
@@ -202,7 +204,7 @@ int main(int argc, char **argv)
     seg.setOptimizeCoefficients(true);
     seg.setModelType(pcl::SACMODEL_PLANE);
     seg.setMethodType(pcl::SAC_RANSAC);
-    seg.setMaxIterations(1000);
+    seg.setMaxIterations(100);
     seg.setDistanceThreshold(0.02);
 
     seg.setInputCloud(cloud_filtered);
@@ -220,7 +222,7 @@ int main(int argc, char **argv)
     // (5)除去平面模型的其他点云模型Remove the planar inliers, extract the rest
     extract.setNegative(true); // 保留除平面的模型
     extract.filter(*cloud_f);
-    *cloud_filtered = *cloud_f;
+    // *cloud_filtered = *cloud_f; // 检测断裂，不需要
 
     // （6）设置kd树 Creating the KdTree object for the search method of the extraction
     pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>);
@@ -230,12 +232,13 @@ int main(int argc, char **argv)
     std::vector<pcl::PointIndices> cluster_indices;
     pcl::EuclideanClusterExtraction<pcl::PointXYZ> ec;
     // 每个点的邻域半径。如果取一个非常小的值，则可能会将实际对象视为多个簇。另一方面，如果将该值设置得过高，则可能会将多个对象视为一个簇。
-    ec.setClusterTolerance(0.02); // 2cm
-    ec.setMinClusterSize(100);    // 聚类簇的最小点数
-    ec.setMaxClusterSize(25000);  // 聚类簇的最大点数
+    ec.setClusterTolerance(1.2); // 2cm
+    ec.setMinClusterSize(200);   // 聚类簇的最小点数
+    ec.setMaxClusterSize(75000); // 聚类簇的最大点数
     ec.setSearchMethod(tree);
     ec.setInputCloud(cloud_filtered);
     ec.extract(cluster_indices);
+    // std::cout << "size: " << cluster_indices.size() << std::endl;
 
     int j = 0;
     for (const auto &cluster : cluster_indices) // 每个聚类簇

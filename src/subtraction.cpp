@@ -11,7 +11,7 @@ Function:两点云相减，得到损伤模型
 **************************************************************************/
 
 #include <iostream>
-
+#include <cstdlib> // For atof() function in C or stod() function in C++
 #include <pcl/point_types.h>
 #include <pcl/common/common.h> //getminmax
 #include <pcl/visualization/pcl_visualizer.h>
@@ -21,6 +21,7 @@ Function:两点云相减，得到损伤模型
 #include <pcl/filters/voxel_grid.h>                  //体素滤波库
 #include <pcl/filters/statistical_outlier_removal.h> //离群值滤波库
 #include <pcl/filters/radius_outlier_removal.h>      //离群值滤波器
+#include <pcl/common/transforms.h>                   //平移
 
 typedef pcl::PointXYZ PointT;
 
@@ -37,7 +38,7 @@ void subtractPointClouds(const pcl::PointCloud<PointT>::Ptr &cloud1,
 
     for (size_t i = 0; i < cloud1->points.size(); ++i)
     {
-        if (kdtree.nearestKSearch(cloud1->points[i], 1, pointIdxNKNSearch, pointNKNSquaredDistance) > 0)
+        if (kdtree.nearestKSearch(cloud1->points[i], 1, pointIdxNKNSearch, pointNKNSquaredDistance) > 0) // 有对应点
         {
             if (pointNKNSquaredDistance[0] > threshold * threshold)
             {
@@ -119,8 +120,21 @@ int main(int argc, char **argv)
         PCL_ERROR("Couldn't read file model \n");
         return (-1);
     }
-    voxelfilter(0.3f, cloud2, cloud);
-    voxelfilter(0.3f, model2, model);
+    // 桥墩7.5f 滤去1/4 数量级10w
+    // 管道1.0f 99w滤到15w
+    voxelfilter(2.5f, cloud2, cloud);
+    voxelfilter(2.5f, model2, model);
+    Eigen::Affine3f transform = Eigen::Affine3f::Identity();
+    // transform.translation() << -1.6, -1.5, 0.0; // 管道凹陷都平移矩阵
+    transform.translation() << -185.584, 0, 0.0; // 桥墩裂缝平移矩阵
+
+    // Perform translation
+    // pcl::transformPointCloud(*cloud, *cloud_transformed, transform);
+    // Perform translation
+    pcl::transformPointCloud(*model, *model2, transform);
+    *model = *model2;
+    // *cloud = *cloud2;
+    // *model = *model2;
 
     std::cout << "cloud points:" << cloud->size() << std::endl;
     std::cout << "model points:" << model->size() << std::endl;
@@ -129,8 +143,15 @@ int main(int argc, char **argv)
     // 输出最小和最大点
     std::cout << "Min point: (" << min_pt[0] << ", " << min_pt[1] << ", " << min_pt[2] << ")" << std::endl;
     std::cout << "Max point: (" << max_pt[0] << ", " << max_pt[1] << ", " << max_pt[2] << ")" << std::endl;
+    pcl::getMinMax3D(*model, min_pt, max_pt);
+    // 输出最小和最大点
+    std::cout << "Min point: (" << min_pt[0] << ", " << min_pt[1] << ", " << min_pt[2] << ")" << std::endl;
+    std::cout << "Max point: (" << max_pt[0] << ", " << max_pt[1] << ", " << max_pt[2] << ")" << std::endl;
 
-    double threshold = 0.1; // 设置差异阈值
+    // double threshold = 0.1;
+    // 设置差异阈值 桥墩17.5
+    // 管道凹陷2.5或3.5， 管道断裂4.5左右  裂缝0.85 凸起6.2
+    double threshold = std::stod(argv[3]);
     subtractPointClouds(cloud, model, diffcloud, threshold);
     subtractPointClouds(model, cloud, diffcloud2, threshold);
 
@@ -151,7 +172,10 @@ int main(int argc, char **argv)
 
     // 使用 '+' 运算符合并两个点云
     *merged_cloud = *diffcloud + *diffcloud2;
-    RORfilter(5, 1.0f, merged_cloud, filtered_cloud);
+    RORfilter(5, 50.0f, merged_cloud, filtered_cloud); // 桥墩5,50
+    // RORfilter(5, 5.0f, merged_cloud, filtered_cloud); // 管道
+
+    pcl::io::savePCDFileASCII("../../data/new/pier_crack_damage_data.pcd", *filtered_cloud);
 
     pcl::visualization::PCLVisualizer viewer("subview"); // 设置可视化窗口
     // v1 v2是视窗标识符
@@ -169,12 +193,12 @@ int main(int argc, char **argv)
     viewer.createViewPort(0.33, 0.5, 0.66, 1, v4);
     viewer.createViewPort(0.66, 0.5, 1, 1, v6);
 
-    viewer.addPointCloud(cloud, "cloud", v1);
-    viewer.addPointCloud(model, "cloud_Voxelfiltered", v2);
-    viewer.addPointCloud(diffcloud, "cloud_SORfiltered", v3);
-    viewer.addPointCloud(diffcloud2, "cloud_filtered", v4);
-    viewer.addPointCloud(merged_cloud, "merged_cloud", v5);
-    viewer.addPointCloud(filtered_cloud, "filtered_cloud", v6);
+    viewer.addPointCloud(cloud, "cloud", v1);                   // 左下 目标
+    viewer.addPointCloud(model, "cloud_Voxelfiltered", v2);     // 中下 原始u模型
+    viewer.addPointCloud(diffcloud, "cloud_SORfiltered", v3);   // 左上
+    viewer.addPointCloud(diffcloud2, "cloud_filtered", v4);     // 中上
+    viewer.addPointCloud(merged_cloud, "merged_cloud", v5);     // 右下 损失合并
+    viewer.addPointCloud(filtered_cloud, "filtered_cloud", v6); // 右上 滤波
     viewer.spin();
     return 0;
 }

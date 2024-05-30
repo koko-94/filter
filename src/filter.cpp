@@ -92,27 +92,27 @@ int main(int argc, char **argv)
     pcl::io::loadPCDFile(argv[1], *cloud);
 
     // 应用体素滤波器
-    // voxelfilter(0.01f, cloud, cloud_Voxelfiltered);
+    voxelfilter(0.2f, cloud, cloud_Voxelfiltered);
     // SOR应用离群值滤波器
-    // SORfilter(50, 1.0f, cloud, cloud_SORfiltered);
+    SORfilter(50, 1.0f, cloud_Voxelfiltered, cloud_SORfiltered);
     // ROR
     // RORfilter(3, 0.005f, cloud, cloud_RORfiltered);
     // 3. 移动最小二乘法平滑
 
     pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> ne;
-    ne.setInputCloud(cloud);
+    ne.setInputCloud(cloud_SORfiltered);
     pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>());
     ne.setSearchMethod(tree);
     pcl::PointCloud<pcl::Normal>::Ptr normals(new pcl::PointCloud<pcl::Normal>);
     ne.setRadiusSearch(0.03);
     ne.compute(*normals);
     pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
-    pcl::concatenateFields(*cloud, *normals, *cloud_with_normals);
+    pcl::concatenateFields(*cloud_SORfiltered, *normals, *cloud_with_normals);
 
     pcl::MovingLeastSquares<pcl::PointXYZ, pcl::PointNormal> mls;
 
     mls.setComputeNormals(true);
-    mls.setInputCloud(cloud);
+    mls.setInputCloud(cloud_SORfiltered);
     mls.setSearchMethod(tree);
     mls.setPolynomialOrder(2); // 2阶
     mls.setSearchRadius(1);    // 用于拟合的K近邻半径。在这个半径里进行表面映射和曲面拟合。半径越小拟合后曲面的失真度越小，反之有可能出现过拟合的现象。
@@ -122,17 +122,31 @@ int main(int argc, char **argv)
     pcl::copyPointCloud(*cloud_with_normals, *cloud_filtered);
     //  Viewer
     pcl::visualization::PCLVisualizer viewer("viewer");
+    // int v1(1);
+    // int v2(2);
+    // // createViewPort 参数是 double xmin, double ymin, double xmax, double ymax, int &viewport
+    // viewer.createViewPort(0, 0, 0.5, 1, v1);
+    // viewer.createViewPort(0.5, 0, 1, 1, v2);
+    // // pcl::visualization::PointCloudColorHandlerRGBField<PointTRGB> rgb(cloud); // rgb 显示本身颜色
+
+    // viewer.addPointCloud(cloud, "cloud", v1);
+    // viewer.addPointCloud(cloud_filtered, "RORfiltered", v2);
+    // viewer.spin();
     int v1(1);
     int v2(2);
+    int v3(3);
+    int v4(4);
     // createViewPort 参数是 double xmin, double ymin, double xmax, double ymax, int &viewport
-    viewer.createViewPort(0, 0, 0.5, 1, v1);
-    viewer.createViewPort(0.5, 0, 1, 1, v2);
-    // pcl::visualization::PointCloudColorHandlerRGBField<PointTRGB> rgb(cloud); // rgb 显示本身颜色
+    viewer.createViewPort(0, 0, 0.5, 0.5, v1);
+    viewer.createViewPort(0.5, 0, 1, 0.5, v2);
+    viewer.createViewPort(0, 0.5, 0.5, 1, v3);
+    viewer.createViewPort(0.5, 0.5, 1, 1, v4);
 
     viewer.addPointCloud(cloud, "cloud", v1);
-    viewer.addPointCloud(cloud_filtered, "RORfiltered", v2);
+    viewer.addPointCloud(cloud_Voxelfiltered, "cloud_Voxelfiltered", v2);
+    viewer.addPointCloud(cloud_SORfiltered, "cloud_SORfiltered", v3);
+    viewer.addPointCloud(cloud_filtered, "cloud_filtered", v4);
     viewer.spin();
-
     return 0;
 }
 
@@ -156,19 +170,19 @@ void RORfilter(int num, float radius, const pcl::PointCloud<PointT>::Ptr &inputc
               << " data points (" << outputcloud->points.size() << ").";
 
     // 保存滤波后的点云到文件
-    pcl::io::savePCDFileASCII("../../data/RORfiltered_cloud.pcd", *outputcloud);
-    pcl::visualization::PCLVisualizer viewer("cloud_RORfiltered"); // 设置可视化窗口
-    // v1 v2是视窗标识符
-    int v1(1);
-    int v2(2);
-    // createViewPort 参数是 double xmin, double ymin, double xmax, double ymax, int &viewport
-    viewer.createViewPort(0, 0, 0.5, 1, v1);
-    viewer.createViewPort(0.5, 0, 1, 1, v2);
-    // pcl::visualization::PointCloudColorHandlerRGBField<PointTRGB> rgb(cloud); // rgb 显示本身颜色
+    // pcl::io::savePCDFileASCII("../../data/RORfiltered_cloud.pcd", *outputcloud);
+    // pcl::visualization::PCLVisualizer viewer("cloud_RORfiltered"); // 设置可视化窗口
+    // // v1 v2是视窗标识符
+    // int v1(1);
+    // int v2(2);
+    // // createViewPort 参数是 double xmin, double ymin, double xmax, double ymax, int &viewport
+    // viewer.createViewPort(0, 0, 0.5, 1, v1);
+    // viewer.createViewPort(0.5, 0, 1, 1, v2);
+    // // pcl::visualization::PointCloudColorHandlerRGBField<PointTRGB> rgb(cloud); // rgb 显示本身颜色
 
-    viewer.addPointCloud(inputcloud, "cloud", v1);
-    viewer.addPointCloud(outputcloud, "RORfiltered", v2);
-    viewer.spin();
+    // viewer.addPointCloud(inputcloud, "cloud", v1);
+    // viewer.addPointCloud(outputcloud, "RORfiltered", v2);
+    // viewer.spin();
 }
 
 void voxelfilter(float size, const pcl::PointCloud<PointT>::Ptr &inputcloud, const pcl::PointCloud<PointT>::Ptr &outputcloud)
@@ -187,18 +201,18 @@ void voxelfilter(float size, const pcl::PointCloud<PointT>::Ptr &inputcloud, con
     pcl::PCDWriter writer;
     writer.write("../../data/voxel_fliered.pcd", *outputcloud);
 
-    pcl::visualization::PCLVisualizer viewer("Voxel_filter"); // 设置可视化窗口
-    // v1 v2是视窗标识符
-    int v1(1);
-    int v2(2);
-    // createViewPort 参数是 double xmin, double ymin, double xmax, double ymax, int &viewport
-    viewer.createViewPort(0, 0, 0.5, 1, v1);
-    viewer.createViewPort(0.5, 0, 1, 1, v2);
-    // pcl::visualization::PointCloudColorHandlerRGBField<PointTRGB> rgb(cloud); // rgb 显示本身颜色
+    // pcl::visualization::PCLVisualizer viewer("Voxel_filter"); // 设置可视化窗口
+    // // v1 v2是视窗标识符
+    // int v1(1);
+    // int v2(2);
+    // // createViewPort 参数是 double xmin, double ymin, double xmax, double ymax, int &viewport
+    // viewer.createViewPort(0, 0, 0.5, 1, v1);
+    // viewer.createViewPort(0.5, 0, 1, 1, v2);
+    // // pcl::visualization::PointCloudColorHandlerRGBField<PointTRGB> rgb(cloud); // rgb 显示本身颜色
 
-    viewer.addPointCloud(inputcloud, "cloud", v1);
-    viewer.addPointCloud(outputcloud, "filtered", v2);
-    viewer.spin();
+    // viewer.addPointCloud(inputcloud, "cloud", v1);
+    // viewer.addPointCloud(outputcloud, "filtered", v2);
+    // viewer.spin();
 }
 
 void SORfilter(int num, float threshoud, const pcl::PointCloud<PointT>::Ptr &inputcloud,
@@ -222,20 +236,20 @@ void SORfilter(int num, float threshoud, const pcl::PointCloud<PointT>::Ptr &inp
     writer.write<PointT>("../../data/sor_inliers.pcd", *outputcloud, false);
 
     // 保存异常点：
-    sor.setNegative(true);
+    // sor.setNegative(true);
     sor.filter(*outputcloud);
-    writer.write<PointT>("../../data/sor_outliers.pcd", *outputcloud, false);
+    // writer.write<PointT>("../../data/sor_outliers.pcd", *outputcloud, false);
 
-    pcl::visualization::PCLVisualizer viewer("SOR_filter"); // 设置可视化窗口
-    // v1 v2是视窗标识符
-    int v1(1);
-    int v2(2);
-    // createViewPort 参数是 double xmin, double ymin, double xmax, double ymax, int &viewport
-    viewer.createViewPort(0, 0, 0.5, 1, v1);
-    viewer.createViewPort(0.5, 0, 1, 1, v2);
-    // pcl::visualization::PointCloudColorHandlerRGBField<PointTRGB> rgb(cloud); // rgb 显示本身颜色
+    // pcl::visualization::PCLVisualizer viewer("SOR_filter"); // 设置可视化窗口
+    // // v1 v2是视窗标识符
+    // int v1(1);
+    // int v2(2);
+    // // createViewPort 参数是 double xmin, double ymin, double xmax, double ymax, int &viewport
+    // viewer.createViewPort(0, 0, 0.5, 1, v1);
+    // viewer.createViewPort(0.5, 0, 1, 1, v2);
+    // // pcl::visualization::PointCloudColorHandlerRGBField<PointTRGB> rgb(cloud); // rgb 显示本身颜色
 
-    viewer.addPointCloud(inputcloud, "cloud", v1);
-    viewer.addPointCloud(outputcloud, "filtered", v2);
-    viewer.spin();
+    // viewer.addPointCloud(inputcloud, "cloud", v1);
+    // viewer.addPointCloud(outputcloud, "filtered", v2);
+    // viewer.spin();
 }
